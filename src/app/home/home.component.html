@@ -1,0 +1,35 @@
+<mat-card class="home-card">
+  <mat-card-header>
+    <div mat-card-avatar class="home-card-image"></div>
+    <mat-card-title>
+      Welcome to AWS-Quiz!
+    </mat-card-title>
+    <mat-card-subtitle>
+      <h2>
+        To get started, enter your name and press submit.
+      </h2>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="home-form">
+      <mat-form-field>
+        <input
+          [(ngModel)]="currentUser"
+          [ngModelOptions]="{standalone: true}"
+          matInput
+          name="User"
+          placeholder="Enter a name"  />
+      </mat-form-field>
+      <br />
+      <br />
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        (click)="startQuiz(currentUser)"
+      >
+        Submit
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

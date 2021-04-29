@@ -1,0 +1,164 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "multi_choice": false,
+      "question": "Which of the following statements regarding S3 storage classes is true?",
+      "choices": [
+        "The availability of S3 and S3-IA is the same",
+        "The durability of S3 and S3-IA is the same",
+        "The latency of S3 and Glacier is the same",
+        "The latency of S3 is greater than that of Glacier"
+      ]
+    },
+    {
+      "id": 2,
+      "multi_choice": true,
+      "question": "For which of the following HTTP methods does S3 have eventual consistency? (Choose two.) ",
+      "choices": ["PUTs of new objects", "GETs", "DELETEs", "PUTs that overwrite existing objects"]
+    },
+    {
+      "id": 3,
+      "multi_choice": false,
+      "question": "What is the smallest file size that can be stored on standard class S3?",
+      "choices": [
+        "1 byte",
+        "1 MB",
+        "0 bytes",
+        "1 KB"
+      ]
+    },
+    {
+      "id": 4,
+      "multi_choice": true,
+      "question": "Which of the following AWS services appear in the AWS console across all regions? (Choose two.) ",
+      "choices": [
+        "S3",
+        "EC2",
+        "IAM",
+        "RDS"
+      ]
+    },
+    {
+      "id": 5,
+      "multi_choice": false,
+      "question": "Which of the following statements is not true? ",
+      "choices": [
+        "Standard S3, S3-IA, and S3 One Zone-IA all are equally durable",
+        "The availability of S3-IA and S3 One Zone-IA are identical",
+        "Standard S3, S3-IA, and S3 One Zone-IA all have different availabilities",
+        "S3 One Zone-IA is as durable as standard S3"
+      ]
+    },
+    {
+      "id": 6,
+      "multi_choice": true,
+      "question": "Which of the following items are included in an Auto Scaling Launch Configuration? (Choose two.)",
+      "choices": [
+        "The AMI to use for creating new instances",
+        "The EBS storage volume for the instances to create",
+        "The polling time for monitoring network latency",
+        "The IAM role to associate with created instances"
+      ]
+    },
+    {
+      "id": 7,
+      "multi_choice": false,
+      "question": " There are currently objects in a buckets ranging from 0 bytes to over 1 GB. In this situation, what is the smallest file size that S3-IA will charge you for? ",
+      "choices": [
+        "1 byte",
+        "1 MB",
+        "0 bytes",
+        "128 KB"
+      ]
+    },
+    {
+      "id": 8,
+      "multi_choice": false,
+      "question": " Which of the following would you use for setting up AMIs from which new instances are created in an Auto Scaling policy? ",
+      "choices": [
+        "The Auto Scaling policy itself",
+        "The security group for the Auto Scaling policy",
+        "The Auto Scaling group used by the Auto Scaling policy",
+        "The launch configuration used by the Auto Scaling policy"
+      ]
+    },
+    {
+      "id": 9,
+      "multi_choice": true,
+      "question": " How does AWS allow you to add metadata to your EC2 instances? (Choose two.) ",
+      "choices": [
+        "Certificates",
+        "Tags",
+        "Policies",
+        "Labels"
+      ]
+    },
+    {
+      "id": 10,
+      "multi_choice": false,
+      "question": " In what manner are EBS snapshots backed up to S3? ",
+      "choices": [
+        "Via full backup according to the backup policy set on the volume",
+        "Incrementally",
+        "Synchronously",
+        "EBS volumes are not stored on S3"
+      ]
+    },
+    {
+      "id": 11,
+      "multi_choice": false,
+      "question": " Where are individual EC2 instances provisioned?",
+      "choices": [
+        "In a specific region",
+        "In a specific availability zone",
+        "In a random availability zone within a specified region",
+        "It depends upon the region."
+      ]
+    },
+    {
+      "id": 12,
+      "multi_choice": false,
+      "question": " Which of the following can be deployed across availability zones? ",
+      "choices": [
+        "Cluster placement groups",
+        "Placement groups",
+        "Spread placement groups",
+        "Cross-region placement groups"
+      ]
+    },
+    {
+      "id": 13,
+      "multi_choice": false,
+      "question": " Which of the following services is used at an on-premises site to build a site-to-site VPN connection?",
+      "choices": [
+        "Storage gateway",
+        "Virtual private gateway",
+        "Customer gateway",
+        "Virtual private network"
+      ]
+    },
+    {
+      "id": 14,
+      "multi_choice": false,
+      "question": " Which of the following services is used at an on-premises site to connect to cloud-based storage? ",
+      "choices": [
+        "Storage gateway",
+        "Virtual private gateway",
+        "Customer gateway",
+        "Virtual private network"
+      ]
+    },
+    {
+      "id": 15,
+      "multi_choice": false,
+      "question": "Can you attach an EBS volume to more than one EC2 instance at the same time?",
+      "choices": [
+        "Yes, as long as the volume is not the root volume",
+        "No, EBS volumes cannot be attached to more than one instance at the same time",
+        "Yes, as long as the volume is one of the SSD classes and not magnetic storage",
+        "Yes, as long as at least one of the instances uses the volume as its root volume"
+      ]
+    }
+  ]
+}

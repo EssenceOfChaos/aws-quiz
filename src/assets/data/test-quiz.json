@@ -1,0 +1,35 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "multi_choice": true,
+      "question": "Which of the following are names of seasons? ",
+      "choices": ["Autumn", "Winter", "Sumfer", "Swing"]
+    },
+
+    {
+      "id": 2,
+      "multi_choice": false,
+      "question": "Which of the following is NOT a built-in data type in Elixir? ",
+      "choices": ["Map", "Atom", "Array", "String"]
+    },
+    {
+      "id": 3,
+      "multi_choice": false,
+      "question": "Which of the following callbacks handle asynchronous requests in GenServer? ",
+      "choices": ["handle_call", "handle_cast", "handle_async", "reply"]
+    },
+    {
+      "id": 4,
+      "multi_choice": false,
+      "question": "Elixir is a dynamic, functional language that leverages the _______, known for running low-latency, distributed and fault-tolerant systems.",
+      "choices": [
+        "Java Virtual Machine",
+        "Erlang Virtual Machine",
+        "GNU Compiler Collection (GCC)",
+        "Cross-transactional Binary Compiler"
+      ]
+    }
+
+  ]
+}

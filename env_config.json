@@ -1,0 +1,9 @@
+{
+  "DB_HOST": "{DB_HOST}",
+  "domain": "{DOMAIN}",
+  "clientId": "{CLIENT_ID}",
+  "audience": "{API_IDENTIFIER}",
+  "apiUri": "http://localhost:3000",
+  "appUri": "http://localhost:4200",
+  "errorPath": "/error"
+}

@@ -1,0 +1,80 @@
+
+<mat-card class="question-card" *ngIf="questions.length">
+  <h3>Question # {{ index + 1 }} of {{ questions.length }}</h3>
+
+  <mat-card-subtitle> Number Correct: {{ correctAnswers }} </mat-card-subtitle>
+  <mat-card-content>
+    <p>{{ questions[index].question }}</p>
+  </mat-card-content>
+
+  <!-- If question requires multiple selections -->
+  <section *ngIf="questions[index].multi_choice; else useRadioButton" class="example-section">
+    <form [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
+    <mat-checkbox
+    class="checkbox-margin"
+    *ngFor="let choice of questions[index].choices"
+    (change)="onCheckboxChange($event)"
+    name="{{choice}}"
+    [value]="choice"
+    >
+    {{ choice }}
+  </mat-checkbox>
+  <mat-card-actions class="submit-button">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="submitChoice(form.value, true)"
+      [style.visibility]="isAnswered === true ? 'hidden' : 'visible'"
+    >
+      Submit
+    </button>
+  </mat-card-actions>
+  </form>
+  </section>
+
+<!-- If question requires single selection -->
+  <ng-template #useRadioButton>
+    <mat-radio-group  class="question-radio-group" [(ngModel)]="response">
+      <mat-radio-button
+        class="question-radio-button"
+        *ngFor="let choice of questions[index].choices"
+        [value]="choice"
+      >
+        {{ choice }}
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-card-actions class="submit-button">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="submitChoice(response)"
+        [style.visibility]="isAnswered === true ? 'hidden' : 'visible'"
+      >
+        Submit
+      </button>
+    </mat-card-actions>
+  </ng-template>
+
+  <button
+    mat-raised-button
+    color="accent"
+    style="float:right;"
+    (click)="nextQuestion(index + 1)"
+    [style.visibility]="isAnswered === false ? 'hidden' : 'visible'"
+  >
+    Next Question
+  </button>
+  <mat-card-footer class="card-footer" *ngIf="correctAnswer == 'no'">
+    <h2 style="text-align:center;">
+      Sorry, that is incorrect
+      <img class="footer-image" src="assets/images/badge-x.svg" height="40" width="40" />
+    </h2>
+  </mat-card-footer>
+  <mat-card-footer class="card-footer" *ngIf="correctAnswer == 'yes'">
+    <h2 style="text-align:center;">
+      Great Job!
+      <img class="footer-image" src="assets/images/badge-check.svg" height="40" width="40" />
+    </h2>
+  </mat-card-footer>
+</mat-card>
