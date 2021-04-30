@@ -1,9 +1,9 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, ValidatorFn } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 
-import { ANSWERS } from './answers/test-quiz-answers';
+import { ANSWERS } from './answers/aws-solutions-architect-answers';
 import { QuizService } from './quiz.service';
 import { Title } from '@angular/platform-browser';
 
@@ -34,7 +34,6 @@ export class QuizComponent implements OnInit {
   subject = 'aws-solutions-architect'
   // state of user's choice ('unanswered', 'no', 'yes')
   correctAnswer = 'unanswered';
-  currentUser = '';
   form: FormGroup;
 
   constructor(
@@ -56,6 +55,9 @@ export class QuizComponent implements OnInit {
         this.questions = res.questions;
       }
     });
+
+    this.userName = localStorage.getItem('user') || 'Unregistered'
+
   }
 
   nextQuestion(i: number) {
@@ -66,12 +68,13 @@ export class QuizComponent implements OnInit {
     this.index++;
     this.isAnswered = false;
     this.correctAnswer = 'unanswered';
+    this.form.reset({});
   }
 
   submitChoice(response: any, multiResponse=false) {
     console.log(this.index, response);
-    if (multiResponse) {
 
+    if (multiResponse) {
       this.checkMultiAnswer(response.multiChoiceResponse)
     } else {
       this.checkAnswer(response);
@@ -80,7 +83,7 @@ export class QuizComponent implements OnInit {
     this.isAnswered = true;
     if (this.index === this.questions.length - 1) {
       this.quizFinished = true;
-      this.recordScore(this.correctAnswers, this.subject, this.userName);
+      this.recordScore(this.correctAnswers);
       this.router.navigate(['/leaderboard']);
     }
   }
@@ -98,19 +101,25 @@ export class QuizComponent implements OnInit {
   }
 
   checkMultiAnswer(choices: []){
+    let validResponse = choices.filter(function (response) {
+      return response != null;
+    });
     const answer = this.answers[this.index].choice;
-    console.log(answer);
     let targetNumber = 0
-    let responses = choices.length
-    let answers = answer.length
-    if (responses === answers) {
-      for (let choice of choices) {
-        console.log(choice);
+    let responsesLength = validResponse.length
+    let answersLength = answer.length
+
+    // console.log(validResponse)
+    // console.log(answer);
+
+    if (responsesLength === answersLength) {
+      for (let choice of validResponse) {
         if (answer.includes(choice)) {
           targetNumber += 1
         }
       }
-      if(targetNumber === answers) {
+
+      if(targetNumber === answersLength) {
         this.correctAnswer = 'yes';
         this.correctAnswers = this.correctAnswers + 1;
       } else {
@@ -119,7 +128,7 @@ export class QuizComponent implements OnInit {
     }
   }
 
-  recordScore(score: number, subject = this.subject, user = 'Unregistered') {
+  recordScore(score: number, subject = this.subject, user = this.userName) {
     this.quizService.addScore(score, subject, user).subscribe(res => {
       console.log('Score Successfully Recorded');
     });
@@ -129,11 +138,15 @@ export class QuizComponent implements OnInit {
     console.log(e);
     const multiChoiceResponse: FormArray = this.form.get('multiChoiceResponse') as FormArray;
     if (e.checked) {
+      console.log(`${e.source.name}`)
       multiChoiceResponse.push(new FormControl(e.source.name));
     } else {
       let i: number = 0;
       multiChoiceResponse.controls.forEach((item: any) => {
-        if (item == e.source.name) {
+        console.log(Object.keys(item))
+        console.log(item.value)
+        if (item.value == e.source.name) {
+          console.log(`${e.source.name}`)
           multiChoiceResponse.removeAt(i);
           return;
         }

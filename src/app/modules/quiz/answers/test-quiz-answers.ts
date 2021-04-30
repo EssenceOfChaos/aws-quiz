@@ -13,6 +13,6 @@ export const ANSWERS = [
   },
   {
     id: 4,
-    choice: '[4, 5, 1, 2, 3]',
+    choice: 'Erlang Virtual Machine',
   }
 ];

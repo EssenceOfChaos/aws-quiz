@@ -15,7 +15,7 @@ export class QuizService {
   constructor(private http: HttpClient) {}
 
   getQuestions(): Observable<any> {
-    const url = 'http://localhost:4200/assets/data/test-quiz.json';
+    const url = 'http://localhost:4200/assets/data/aws-solutions-architect-quiz.json';
     console.log(url);
 
     return this.http.get(url).pipe(

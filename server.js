@@ -8,6 +8,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const database = require('./server/config/db');
 const logger = require('./server/config/logger');
+const quizRoute = require('./server/routes/quiz.route')
 
 if (process.env.NODE_ENV !== 'production') {
   logger.info("Node is starting in DEVELOPMENT mode");
@@ -28,7 +29,6 @@ mongoose.connect(database.mongodb.uri, {
 )
 
 // Set up express
-const quizRoute = require('./server/routes/quiz.route')
 const app = express();
 
 // Middleware
@@ -41,7 +41,20 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+  );
+  next();
+});
 app.use(express.static(path.join(__dirname, 'dist/aws-quiz')));
+a
 app.use('/api', quizRoute)
 
 // Create port

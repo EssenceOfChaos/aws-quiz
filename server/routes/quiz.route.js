@@ -19,15 +19,25 @@ quizRoute.route('/quizzes').post((req, res) => {
 });
 
 // Get all quizzes
-quizRoute.route('/quizzes').get((req, res) => {
-  Quiz.find((err, data) => {
-    if (err) {
-      return console.error(err);
-    } else {
-      res.json(data);
-    }
-  })
-})
+quizRoute.get('/quizzes', async (req, res) => {
+  try {
+    const quizzes = await Quiz.find();
+    res.json(quizzes);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: err.message });
+  }
+});
+
+// quizRoute.route('/quizzes').get((req, res) => {
+//   Quiz.find((err, data) => {
+//     if (err) {
+//       return console.error(err);
+//     } else {
+//       res.json(data);
+//     }
+//   })
+// })
 
 // Get single quiz
 quizRoute.route('/quiz/:id').get((req, res) => {

@@ -7,7 +7,8 @@ let Quiz = new Schema({
     type: String
   },
   score: {
-    type: String
+    type: String,
+    required: true
   },
   user: {
     type: String
@@ -15,7 +16,9 @@ let Quiz = new Schema({
   date: {
     type: Date, default: Date.now
   }
-}, {
+},
+  { timestamps: true },
+  {
     collection: 'quizzes'
   })
 

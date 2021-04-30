@@ -1,13 +1,19 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
     <mat-toolbar>AWSQuiz</mat-toolbar>
     <mat-nav-list>
-
       <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
-        <a mat-list-item (click)="auth.logout({ returnTo: document.location.origin })">
+        <a
+          mat-list-item
+          (click)="auth.logout({ returnTo: document.location.origin })"
+        >
           Log out
         </a>
       </ng-container>
@@ -16,16 +22,23 @@
         <a mat-list-item (click)="auth.loginWithRedirect()">Log in</a>
       </ng-template>
 
+      <!-- <a
+        mat-list-item
+        *ngIf="auth.isAuthenticated$ | async"
+        routerLink="/profile"
+      >
+        Profile
+      </a> -->
       <a
       mat-list-item
       *ngIf="auth.isAuthenticated$ | async"
-      routerLink="/profile">
-      Profile
-    </a>
-      <a mat-list-item routerLink="/quiz">Quiz</a>
+      routerLink="/quiz"
+      (click)="storeCurrentUser()"
+        >Quiz</a
+      >
       <a mat-list-item routerLink="/leaderboard" routerLinkActive="active"
-      >Leaderboard
-    </a>
+        >Leaderboard
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -35,13 +48,29 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        *ngIf="isHandset$ | async"
+      >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span routerLink="/">AWS-Quiz</span>
+      <span class="example-spacer"></span>
+      <mat-chip color="primary" *ngIf="auth.user$ | async as user" selected>{{
+        user.name
+      }}</mat-chip>
     </mat-toolbar>
-<!-- Routed Components Show Up Here-->
+    <mat-card class="home-card" *ngIf="!auth.isAuthenticated$">
+      <mat-card-header>
+        <div mat-card-avatar class="home-card-image"></div>
+        <mat-card-title> Welcome to AWS-Quiz! </mat-card-title>
+        <mat-card-subtitle>
+          <h2>To get started, log in.</h2>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content> </mat-card-content>
+    </mat-card>
+
+    <!-- Routed Components Show Up Here-->
     <router-outlet></router-outlet>
-<!---->
+    <!---->
   </mat-sidenav-content>
 </mat-sidenav-container>
