@@ -5,7 +5,7 @@ import { QuizComponent } from './quiz.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':subject',
     component: QuizComponent,
     data: { animation: 'subject' }
   }

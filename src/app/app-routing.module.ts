@@ -4,11 +4,13 @@ import { HomeComponent } from './home/home.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { NgModule } from '@angular/core';
 import { ProfileComponent } from './profile/profile.component';
+import { SubjectsComponent } from './subjects/subjects.component';
 
 const routes: Routes = [
 
   { path: 'profile', component: ProfileComponent },
   { path: 'leaderboard', component: LeaderboardComponent },
+  { path: 'subjects', component: SubjectsComponent },
   {
     path: 'quiz',
     loadChildren: () =>

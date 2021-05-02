@@ -1,4 +1,4 @@
-export const ANSWERS = [
+export const DESIGN_RESILIENT_ANSWERS = [
   {
     id: 1,
     choice: "The durability of S3 and S3-IA is the same",

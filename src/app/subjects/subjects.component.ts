@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 
-import { Router } from '@angular/router';
-import { Subject } from 'src/app/subjects/subjects.component';
+export interface Subject {
+  value: string;
+  viewValue: string;
+  image: string;
+}
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-subjects',
+  templateUrl: './subjects.component.html',
+  styleUrls: ['./subjects.component.css']
 })
-export class HomeComponent implements OnInit {
+
+export class SubjectsComponent implements OnInit {
+
+  constructor() { }
   subjects: Subject[] = [
     {
       value: 'design_resilient',
@@ -32,18 +37,7 @@ export class HomeComponent implements OnInit {
       image: 'http://localhost:4200/assets/images/shield.png'
     }
   ];
-  constructor(public router: Router) { }
-
-  userForm = new FormGroup({
-    subject: new FormControl('')
-  });
-
   ngOnInit(): void {
-  }
-
-  startQuiz(formValues: any) {
-    console.log(formValues);
-    this.router.navigate([`/quiz/${formValues.value.subject}`])
   }
 
 }

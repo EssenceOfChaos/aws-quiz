@@ -6,19 +6,30 @@ import { Injectable } from '@angular/core';
 import { Quiz } from './quiz';
 import { environment } from '../../../environments/environment';
 
+let quizPath = {
+  design_resilient: 'assets/data/design_resilient.json',
+  js: 'assets/data/javascript_quiz.json'
+};
 @Injectable({
   providedIn: 'root'
 })
 export class QuizService {
-  quizUrl = 'assets/data/quiz.json';
+
+
+  quizUrl = '';
   endpoint = environment.quizUrl;
   constructor(private http: HttpClient) {}
 
-  getQuestions(): Observable<any> {
-    const url = 'http://localhost:4200/assets/data/aws-solutions-architect-quiz.json';
-    console.log(url);
+  getQuestions(subject: any): Observable<any> {
+    if (subject == 'design_resilient') {
+      this.quizUrl = 'assets/data/design_resilient.json'
+    } else if(subject == 'js') {
+      this.quizUrl = 'assets/data/javascript_quiz.json'
+    }
 
-    return this.http.get(url).pipe(
+    console.log(this.quizUrl);
+
+    return this.http.get(this.quizUrl).pipe(
       retry(3),
       catchError(this.handleError)
     );

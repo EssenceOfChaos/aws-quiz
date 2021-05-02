@@ -1,12 +1,16 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { DESIGN_RESILIENT_ANSWERS, JAVASCRIPT_ANSWERS } from './answers';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 
-import { ANSWERS } from './answers/aws-solutions-architect-answers';
 import { QuizService } from './quiz.service';
 import { Title } from '@angular/platform-browser';
 
+interface Answer {
+  id: string;
+  choice: [] | string
+}
 interface Question {
   id: number;
   multi_choice: boolean;
@@ -24,14 +28,15 @@ export class QuizComponent implements OnInit {
 
   questions: Array<Question> = [];
   question!: Observable<Question>;
-  answers = ANSWERS;
+  answers: any;
+  // answers = ANSWERS;
   index = 0;
   isAnswered = false;
   quizFinished = false;
   correctAnswers = 0;
-  userName!: string;
   response!: string;
-  subject = 'aws-solutions-architect'
+  userName!: string;
+  subject = 'design_resilient'
   // state of user's choice ('unanswered', 'no', 'yes')
   correctAnswer = 'unanswered';
   form: FormGroup;
@@ -40,7 +45,8 @@ export class QuizComponent implements OnInit {
     private title: Title,
     private quizService: QuizService,
     private fb: FormBuilder,
-    public router: Router) {
+    public router: Router,
+    private route: ActivatedRoute) {
       this.form = this.fb.group({
         multiChoiceResponse: this.fb.array([])
     })
@@ -49,7 +55,9 @@ export class QuizComponent implements OnInit {
   ngOnInit() {
     console.log('ngOnInit Fired from QuizComponent.');
     this.title.setTitle(this.pageTitle);
-    this.quizService.getQuestions().subscribe(res => {
+    this.subject = this.route.snapshot.paramMap.get('subject') || 'design_resilient'
+
+    this.quizService.getQuestions(this.subject).subscribe(res => {
       if (res) {
         console.log(res);
         this.questions = res.questions;
@@ -57,6 +65,14 @@ export class QuizComponent implements OnInit {
     });
 
     this.userName = localStorage.getItem('user') || 'Unregistered'
+
+    const subjects = {
+      js: JAVASCRIPT_ANSWERS,
+      design_resilient: DESIGN_RESILIENT_ANSWERS,
+
+    };
+    console.log(this.subject)
+    this.answers = DESIGN_RESILIENT_ANSWERS
 
   }
 
