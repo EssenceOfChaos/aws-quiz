@@ -12,7 +12,7 @@ const quizRoute = require('./server/routes/quiz.route')
 
 if (process.env.NODE_ENV !== 'production') {
   logger.info("Node is starting in DEVELOPMENT mode");
-  console.log(process.env)
+
 }
 
 // Connecting mongoDB
@@ -54,7 +54,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.static(path.join(__dirname, 'dist/aws-quiz')));
-a
+
 app.use('/api', quizRoute)
 
 // Create port

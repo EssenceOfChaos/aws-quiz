@@ -126,9 +126,6 @@ export class QuizComponent implements OnInit {
     let responsesLength = validResponse.length
     let answersLength = answer.length
 
-    // console.log(validResponse)
-    // console.log(answer);
-
     if (responsesLength === answersLength) {
       for (let choice of validResponse) {
         if (answer.includes(choice)) {
