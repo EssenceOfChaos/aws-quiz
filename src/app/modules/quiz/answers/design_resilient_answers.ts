@@ -5,7 +5,7 @@ export const DESIGN_RESILIENT_ANSWERS = [
   },
   {
     id: 2,
-    choice: ["DELETEs", "PUTs that overwrite existing objects"],
+    choice: "All methods are now strongly consistent in s3",
   },
   {
     id: 3,

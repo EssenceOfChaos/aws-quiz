@@ -1,0 +1,15 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "multi_choice": false,
+      "question": "Which of the following databases support read replicas?",
+      "choices": [
+        "MariaDB",
+        "MySQL",
+        "PostgreSQL",
+        "All of the above"
+      ]
+    },
+  ]
+}

@@ -4,6 +4,8 @@ export interface Subject {
   value: string;
   viewValue: string;
   image: string;
+  description?: string;
+  enabled?: boolean;
 }
 
 @Component({

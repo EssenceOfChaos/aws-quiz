@@ -25,7 +25,7 @@ interface Question {
 })
 export class QuizComponent implements OnInit {
   pageTitle = 'Quiz';
-
+  quizProgressBar = 0;
   questions: Array<Question> = [];
   question!: Observable<Question>;
   answers: any;
@@ -85,6 +85,7 @@ export class QuizComponent implements OnInit {
     this.isAnswered = false;
     this.correctAnswer = 'unanswered';
     this.form.reset({});
+    this.incrementProgressBar();
   }
 
   submitChoice(response: any, multiResponse=false) {
@@ -173,6 +174,11 @@ export class QuizComponent implements OnInit {
 
   submitForm() {
     console.log(this.form.value)
+  }
+
+  incrementProgressBar() {
+    // 20 questions means increment 5 per question
+    this.quizProgressBar += 5
   }
 
 }

@@ -1,12 +1,23 @@
-FROM nginx:alpine
+##### Stage 1
+FROM node:latest as node
 LABEL author="Frederick John"
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm install
+COPY . .
+RUN npm run build -- --prod
+
+##### Stage 2
+FROM nginx:alpine
+VOLUME /var/cache/nginx
+COPY --from=node /app/dist /usr/share/nginx/html
 COPY ./config/nginx.conf /etc/nginx/conf.d/default.conf
 
 # --tag, -t Name and optionally a tag in the 'name:tag' form
 # --file, -f Name of the Dockerfile, defaults to ./Dockerfile
 
-# docker build -t aws-quiz -f nginx.dockerfile .
-# docker run -p 8080:80 $(pwd)/dist:/usr/share/nginx/html aws-quiz
+# docker build -t aws-quiz -f nginx.prod.dockerfile .
+# docker run -p 8080:80 aws-quiz
 
 
 

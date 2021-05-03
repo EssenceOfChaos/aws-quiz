@@ -14,22 +14,26 @@ export class HomeComponent implements OnInit {
     {
       value: 'design_resilient',
       viewValue: 'Design Resilient Architectures',
-      image: 'http://localhost:4200/assets/images/backup.png'
+      image: 'http://localhost:4200/assets/images/backup.png',
+      enabled: true
     },
     {
       value: 'design_performant',
       viewValue: 'Design Performant Architectures',
-      image: 'http://localhost:4200/assets/images/speedometer.png'
+      image: 'http://localhost:4200/assets/images/speedometer.png',
+      enabled: false
     },
     {
       value: 'design_cost_optimized',
       viewValue: 'Design Cost-Optimized Architectures',
-      image: 'http://localhost:4200/assets/images/low-prices.png'
+      image: 'http://localhost:4200/assets/images/low-prices.png',
+      enabled: false
     },
     {
-      value: 'specify_secure',
-      viewValue: 'Specify Secure Applications',
-      image: 'http://localhost:4200/assets/images/shield.png'
+      value: 'design_secure',
+      viewValue: 'Design Secure Applications',
+      image: 'http://localhost:4200/assets/images/shield.png',
+      enabled: false
     }
   ];
   constructor(public router: Router) { }
@@ -41,9 +45,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  startQuiz(formValues: any) {
-    console.log(formValues);
-    this.router.navigate([`/quiz/${formValues.value.subject}`])
+  startQuiz(subjectValue: any) {
+    console.log(subjectValue);
+    this.router.navigate([`/quiz/${subjectValue}`])
   }
 
 }

@@ -25,6 +25,8 @@ export class QuizService {
       this.quizUrl = 'assets/data/design_resilient.json'
     } else if(subject == 'js') {
       this.quizUrl = 'assets/data/javascript_quiz.json'
+    } else if (subject == 'design_performant') {
+      this.quizUrl = 'assets/data/design_performant.json'
     }
 
     console.log(this.quizUrl);

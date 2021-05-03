@@ -13,9 +13,9 @@
     },
     {
       "id": 2,
-      "multi_choice": true,
-      "question": "For which of the following HTTP methods does S3 have eventual consistency? (Choose two.) ",
-      "choices": ["PUTs of new objects", "GETs", "DELETEs", "PUTs that overwrite existing objects"]
+      "multi_choice": false,
+      "question": "For which of the following HTTP methods does S3 have eventual consistency?",
+      "choices": ["PUTs of new objects", "GETs", "All methods are now strongly consistent in s3", "PUTs that overwrite existing objects"]
     },
     {
       "id": 3,
