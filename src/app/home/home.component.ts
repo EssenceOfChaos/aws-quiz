@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
       value: 'design_performant',
       viewValue: 'Design Performant Architectures',
       image: '/assets/images/speedometer.png',
-      enabled: true
+      enabled: false
     },
     {
       value: 'design_cost_optimized',
