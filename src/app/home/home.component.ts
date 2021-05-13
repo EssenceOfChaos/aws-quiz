@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
       value: 'design_performant',
       viewValue: 'Design Performant Architectures',
       image: 'http://localhost:3000/assets/images/speedometer.png',
-      enabled: false
+      enabled: true
     },
     {
       value: 'design_cost_optimized',
@@ -38,9 +38,9 @@ export class HomeComponent implements OnInit {
   ];
   constructor(public router: Router) { }
 
-  userForm = new FormGroup({
-    subject: new FormControl('')
-  });
+  // userForm = new FormGroup({
+  //   subject: new FormControl('')
+  // });
 
   ngOnInit(): void {
   }

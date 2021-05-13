@@ -1,6 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { DESIGN_RESILIENT_ANSWERS, JAVASCRIPT_ANSWERS } from './answers';
+import { DESIGN_RESILIENT_ANSWERS, JAVASCRIPT_ANSWERS, DESIGN_PERFORMANT_ANSWERS } from './answers';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 
@@ -36,7 +36,7 @@ export class QuizComponent implements OnInit {
   correctAnswers = 0;
   response!: string;
   userName!: string;
-  subject = 'design_resilient'
+  subject: any;
   // state of user's choice ('unanswered', 'no', 'yes')
   correctAnswer = 'unanswered';
   form: FormGroup;
@@ -55,7 +55,8 @@ export class QuizComponent implements OnInit {
   ngOnInit() {
     console.log('ngOnInit Fired from QuizComponent.');
     this.title.setTitle(this.pageTitle);
-    this.subject = this.route.snapshot.paramMap.get('subject') || 'design_resilient'
+    this.subject = this.route.snapshot.paramMap.get('subject');
+    console.log(this.subject)
 
     this.quizService.getQuestions(this.subject).subscribe(res => {
       if (res) {
@@ -64,15 +65,26 @@ export class QuizComponent implements OnInit {
       }
     });
 
+    // this.quizService.newMethod(this.subject).subscribe(res => {
+    //   if (res) {
+    //     this.questions = res.questions
+    //   }
+    // })
+
     this.userName = localStorage.getItem('user') || 'Unregistered'
 
-    const subjects = {
-      js: JAVASCRIPT_ANSWERS,
-      design_resilient: DESIGN_RESILIENT_ANSWERS,
+    // const subjects = {
+    //   'js': JAVASCRIPT_ANSWERS,
+    //   'design_resilient': DESIGN_RESILIENT_ANSWERS,
+    //   'design_performant': DESIGN_PERFORMANT_ANSWERS
 
-    };
-    console.log(this.subject)
-    this.answers = DESIGN_RESILIENT_ANSWERS
+    // };
+
+    if (this.subject == 'design_resilient') {
+      this.answers = DESIGN_RESILIENT_ANSWERS
+    } else if (this.subject == 'design_performant') {
+      this.answers = DESIGN_PERFORMANT_ANSWERS
+    }
 
   }
 
@@ -98,6 +110,8 @@ export class QuizComponent implements OnInit {
     }
 
     this.isAnswered = true;
+
+    // is it the end of the quiz?
     if (this.index === this.questions.length - 1) {
       this.quizFinished = true;
       this.recordScore(this.correctAnswers);
@@ -169,9 +183,9 @@ export class QuizComponent implements OnInit {
     }
   }
 
-  submitForm() {
-    console.log(this.form.value)
-  }
+  // submitForm() {
+  //   console.log(this.form.value)
+  // }
 
   incrementProgressBar() {
     // 20 questions means increment 5 per question

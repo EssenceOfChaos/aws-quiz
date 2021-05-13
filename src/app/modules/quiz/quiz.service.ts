@@ -10,6 +10,16 @@ let quizPath = {
   design_resilient: 'assets/data/design_resilient.json',
   js: 'assets/data/javascript_quiz.json'
 };
+
+// interface Questions {
+//   questions: {
+//     id: number,
+//     multi_choice: boolean,
+//     question: string,
+//     choices: []<string>
+//   }
+// }
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +27,7 @@ export class QuizService {
 
 
   quizUrl = '';
-  endpoint = environment.quizUrl;
+  endpoint = environment.endpoint;
   constructor(private http: HttpClient) {}
 
   getQuestions(subject: any): Observable<any> {
@@ -29,12 +39,17 @@ export class QuizService {
       this.quizUrl = 'assets/data/design_performant.json'
     }
 
-    console.log(this.quizUrl);
 
-    return this.http.get(this.quizUrl).pipe(
+    console.log( `${this.endpoint}/${this.quizUrl}`);
+
+    return this.http.get(`${this.endpoint}/${this.quizUrl}`).pipe(
       retry(3),
       catchError(this.handleError)
     );
+  }
+
+  newMethod(string: string) {
+    return this.http.get(`${this.endpoint}/${string}`)
   }
 
   addScore(score: number, subject: string, user: string) {
@@ -51,7 +66,7 @@ export class QuizService {
       .pipe(catchError(this.handleError));
   }
 
-  getQuizzes() {
+ getQuizzes() {
     return this.http.get(`${this.endpoint}/quizzes`);
   }
 

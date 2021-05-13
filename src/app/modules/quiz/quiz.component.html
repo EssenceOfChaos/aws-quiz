@@ -10,7 +10,7 @@
 
   <!-- If question requires multiple selections -->
   <section *ngIf="questions[index].multi_choice; else useRadioButton" class="example-section">
-    <form [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
+    <form [formGroup]="form" novalidate>
     <mat-checkbox
     class="checkbox-margin"
     *ngFor="let choice of questions[index].choices"
@@ -32,6 +32,7 @@
   </mat-card-actions>
   </form>
   </section>
+
 
 <!-- If question requires single selection -->
   <ng-template #useRadioButton>
