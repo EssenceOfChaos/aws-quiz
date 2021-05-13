@@ -159,6 +159,61 @@
         "Yes, as long as the volume is one of the SSD classes and not magnetic storage",
         "Yes, as long as at least one of the instances uses the volume as its root volume"
       ]
+    },
+    {
+      "id": 16,
+      "multi_choice": false,
+      "question": "Which of the following storage gateway options is best for applications where latency of specific portions of your entire dataset is the priority?",
+      "choices": [
+        "File gateway",
+        "Cached volume gateway",
+        "Stored volume gateway",
+        "Tape gateway"
+      ]
+    },
+    {
+      "id": 17,
+      "multi_choice": false,
+      "question": "How many S3 buckets can you create per AWS account, by default?",
+      "choices": [
+        "25",
+        "50",
+        "100",
+        "There is not a default limit"
+      ]
+    },
+    {
+      "id": 18,
+      "multi_choice": false,
+      "question": "What HTTP request header is used by MFA Delete requests?",
+      "choices": [
+        "x-delete",
+        "x-amz-mfa",
+        "x-aws-mfa",
+        "x-amz-delete"
+      ]
+    },
+    {
+      "id": 19,
+      "multi_choice": true,
+      "question": "Which of the following are typical origin servers for a CloudFront distribution? (Choose two.)",
+      "choices": [
+        "EC2 instances",
+        "Amazon Glacier archives",
+        "API Gateway",
+        "S3 buckets"
+      ]
+    },
+    {
+      "id": 20,
+      "multi_choice": false,
+      "question": "What is the default visibility of a newly created S3 bucket?",
+      "choices": [
+        "Public",
+        "Private",
+        "Public to registered IAM users of your account",
+        "None of the above"
+      ]
     }
   ]
 }

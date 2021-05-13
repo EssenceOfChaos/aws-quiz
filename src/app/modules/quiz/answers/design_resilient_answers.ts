@@ -58,5 +58,25 @@ export const DESIGN_RESILIENT_ANSWERS = [
   {
     id: 15,
     choice: "No, EBS volumes cannot be attached to more than one instance at the same time",
+  },
+  {
+    id: 16,
+    choice: "Cached volume gateway",
+  },
+  {
+    id: 17,
+    choice: "100",
+  },
+  {
+    id: 18,
+    choice: "x-amz-mfa",
+  },
+  {
+    id: 19,
+    choice: ["EC2 instances", "S3 buckets"],
+  },
+  {
+    id: 20,
+    choice: "Private",
   }
 ];

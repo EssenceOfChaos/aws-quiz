@@ -6,8 +6,8 @@ version: "3.7"
 
 services:
   nginx:
-    container_name: playmarket
-    image: playmarket
+    container_name: aws-quiz
+    image: aws-quiz
     build:
       context: .
       dockerfile: nginx.dockerfile

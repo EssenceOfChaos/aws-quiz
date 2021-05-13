@@ -106,9 +106,9 @@ export class QuizComponent implements OnInit {
   }
 
   checkAnswer(choice: any) {
-    console.log(`The user has supplied the response ${choice}`);
+    // console.log(`The user has supplied the response ${choice}`);
     const answer = this.answers[this.index].choice;
-    console.log(`The correct answer to the question is ${answer}`);
+    // console.log(`The correct answer to the question is ${answer}`);
     if (choice == answer) {
       this.correctAnswer = 'yes';
       this.correctAnswers = this.correctAnswers + 1;

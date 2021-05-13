@@ -5,6 +5,8 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
+RUN pwd
+RUN ls
 RUN npm run build -- --prod
 
 ##### Stage 2
@@ -16,7 +18,7 @@ COPY ./config/nginx.conf /etc/nginx/conf.d/default.conf
 # --tag, -t Name and optionally a tag in the 'name:tag' form
 # --file, -f Name of the Dockerfile, defaults to ./Dockerfile
 
-# docker build -t aws-quiz -f nginx.prod.dockerfile .
+# docker build -t aws-quiz -f nginx.dockerfile .
 # docker run -p 8080:80 aws-quiz
 
 
