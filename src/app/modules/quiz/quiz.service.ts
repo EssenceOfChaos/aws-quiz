@@ -25,7 +25,7 @@ let quizPath = {
 })
 export class QuizService {
 
-
+  quizEndpoint = environment.quizUrl
   quizUrl = '';
   endpoint = environment.endpoint;
   constructor(private http: HttpClient) {}
@@ -48,9 +48,9 @@ export class QuizService {
     );
   }
 
-  newMethod(string: string) {
-    return this.http.get(`${this.endpoint}/${string}`)
-  }
+  // newMethod(string: string) {
+  //   return this.http.get(`${this.endpoint}/${string}`)
+  // }
 
   addScore(score: number, subject: string, user: string) {
     const date = Date.now();
@@ -62,7 +62,7 @@ export class QuizService {
     };
     console.log(result);
     return this.http
-      .post<Quiz>(`${this.endpoint}/quizzes`, result)
+      .post<Quiz>(`${this.quizEndpoint}/quizzes`, result)
       .pipe(catchError(this.handleError));
   }
 
