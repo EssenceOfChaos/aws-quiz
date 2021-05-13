@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   MONGO_URI: '',
-  quizUrl: ' https://aws-quiztime.herokuapp.com/api'
+  quizUrl: ' http://localhost:3000/api'
 };
