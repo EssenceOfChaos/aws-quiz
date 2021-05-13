@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  MONGO_URI: 'mongodb://dev:mongo1@ds145574.mlab.com:45574/dev',
+  MONGO_URI: '',
   quizUrl: 'http://localhost:3000/api'
 };
 

@@ -10,10 +10,13 @@ const database = require('./server/config/db');
 const logger = require('./server/config/logger');
 const quizRoute = require('./server/routes/quiz.route')
 
-if (process.env.NODE_ENV !== 'production') {
-  logger.info("Node is starting in DEVELOPMENT mode");
-
+if (process.env.NODE_ENV == 'DEV') {
+  logger.info("Node is starting in DEVELOPMENT mode.");
 }
+  else if (process.env.NODE_ENV == 'PROD') {
+   console.log('Node is starting in PRODUCTION mode.')
+  }
+
 
 // Connecting mongoDB
 mongoose.Promise = global.Promise;

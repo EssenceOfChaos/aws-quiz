@@ -152,15 +152,15 @@ export class QuizComponent implements OnInit {
     console.log(e);
     const multiChoiceResponse: FormArray = this.form.get('multiChoiceResponse') as FormArray;
     if (e.checked) {
-      console.log(`${e.source.name}`)
+      // console.log(`${e.source.name}`)
       multiChoiceResponse.push(new FormControl(e.source.name));
     } else {
       let i: number = 0;
       multiChoiceResponse.controls.forEach((item: any) => {
-        console.log(Object.keys(item))
-        console.log(item.value)
+        // console.log(Object.keys(item))
+        // console.log(item.value)
         if (item.value == e.source.name) {
-          console.log(`${e.source.name}`)
+          // console.log(`${e.source.name}`)
           multiChoiceResponse.removeAt(i);
           return;
         }
