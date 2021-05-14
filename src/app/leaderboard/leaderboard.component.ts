@@ -11,6 +11,8 @@ export interface UserInfo {
   score: string;
   subject: string;
   date: Date;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 // {_id: "6085db59c6e12fc28d67a534", subject: "aws-solutions-architect", user: "Bob", score: "7", date: "2021-04-25T21:14:49.428Z"}

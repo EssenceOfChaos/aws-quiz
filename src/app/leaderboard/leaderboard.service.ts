@@ -10,11 +10,11 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class LeaderboardService {
-  private url = environment.quizUrl;
+  private url = environment.endpoint;
   constructor(private http: HttpClient) {}
 
   getScores(): Observable<UserInfo> {
-    return this.http.get<UserInfo> (`${this.url}/quizzes`).pipe(
+    return this.http.get<UserInfo> (`${this.url}/api/quizzes`).pipe(
       retry(2),
       catchError(this.handleError)
     );
