@@ -1,7 +1,9 @@
 <mat-card class="home-card">
   <mat-card-header>
-    <div mat-card-avatar class="home-card-image"></div>
-    <mat-card-title>
+    <div mat-card-avatar>
+      <!-- <img src="/assets/images/aws_logo.png" class="aws-avatar"/> -->
+    </div>
+    <mat-card-title class="home-title">
       Welcome to AWS-Quiz!
     </mat-card-title>
     <mat-card-subtitle>
@@ -17,28 +19,31 @@
 </mat-card>
 
 
-<mat-card class="example-card" *ngFor="let subject of subjects">
-  <mat-card-header>
-    <div mat-card-avatar > <img src="{{subject.image}}" class="mat-card-avatar"></div>
-    <mat-card-title>{{subject.viewValue}}</mat-card-title>
-    <mat-card-subtitle *ngIf="subject.enabled">20 Questions</mat-card-subtitle>
-    <mat-card-subtitle *ngIf="!subject.enabled">Coming Soon!</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let subject of subjects">
+    <mat-card class="subject-card">
+      <mat-card-header>
+        <div mat-card-avatar > <img src="{{subject.image}}" class="mat-card-avatar"></div>
+        <mat-card-title>{{subject.viewValue}}</mat-card-title>
+        <mat-card-subtitle *ngIf="subject.enabled">20 Questions</mat-card-subtitle>
+        <mat-card-subtitle *ngIf="!subject.enabled">Coming Soon!</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
 
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button
-    (click)="startQuiz(subject.value)"
-    mat-raised-button
-    color="accent"
-    [disabled]="!subject.enabled"
-    >
-    Start Quiz
-  </button>
-  </mat-card-actions>
-</mat-card>
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+        (click)="startQuiz(subject.value)"
+        mat-raised-button
+        color="accent"
+        [disabled]="!subject.enabled"
+        >
+        Start Quiz
+      </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
 
-
+</mat-grid-list>

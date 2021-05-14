@@ -1,4 +1,5 @@
 import { CommonModule } from "@angular/common";
+import {MatBadgeModule} from '@angular/material/badge';
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -39,7 +40,8 @@ import { NgModule } from "@angular/core";
     MatSidenavModule,
     MatGridListModule,
     MatPaginatorModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatBadgeModule
   ]
 })
 export class MaterialModule {}

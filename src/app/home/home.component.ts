@@ -13,25 +13,25 @@ export class HomeComponent implements OnInit {
   subjects: Subject[] = [
     {
       value: 'design_resilient',
-      viewValue: 'Design Resilient Architectures',
+      viewValue: 'Resilient Architectures',
       image: '/assets/images/backup.png',
       enabled: true
     },
     {
       value: 'design_performant',
-      viewValue: 'Design Performant Architectures',
+      viewValue: 'Performant Architectures',
       image: '/assets/images/speedometer.png',
       enabled: false
     },
     {
       value: 'design_cost_optimized',
-      viewValue: 'Design Cost-Optimized Architectures',
+      viewValue: 'Cost-Optimized Architectures',
       image: '/assets/images/low-prices.png',
       enabled: false
     },
     {
       value: 'design_secure',
-      viewValue: 'Design Secure Applications',
+      viewValue: 'Secure Applications',
       image: '/assets/images/shield.png',
       enabled: false
     }

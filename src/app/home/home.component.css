@@ -1,5 +1,5 @@
-.example-card {
-  max-width: 400px;
+.subject-card {
+  min-width: 350px;
   margin-bottom: 20px;
   margin-left: 40px;
   margin-top: 10px;
@@ -9,8 +9,15 @@
   height: 25;
   width: 25;
 }
-
+.aws-avatar {
+  height: 50px;
+  width: 90px;
+}
 .quiz-card-image {
   width: 150px;
   height: 150px;
+}
+.home-title {
+  display: flex;
+  text-align: center;
 }
