@@ -10,12 +10,12 @@ const database = require('./server/config/db');
 const logger = require('./server/config/logger');
 const quizRoute = require('./server/routes/quiz.route')
 
-if (process.env.NODE_ENV == 'DEV') {
+if (process.env.NODE_ENV == 'development') {
   logger.info("Node is starting in DEVELOPMENT mode.");
 }
-  else if (process.env.NODE_ENV == 'PROD') {
-   console.log('Node is starting in PRODUCTION mode.')
-  }
+else if (process.env.NODE_ENV == 'production') {
+  console.log('Node is starting in PRODUCTION mode.')
+}
 
 
 // Connecting mongoDB
