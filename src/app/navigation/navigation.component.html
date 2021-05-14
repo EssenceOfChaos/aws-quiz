@@ -23,7 +23,6 @@
       <ng-template #loggedOut>
         <a mat-list-item (click)="auth.loginWithRedirect()">Log in</a>
       </ng-template>
-
       <!-- <a
         mat-list-item
         *ngIf="auth.isAuthenticated$ | async"
@@ -31,13 +30,7 @@
       >
         Profile
       </a> -->
-      <a
-      mat-list-item
-      *ngIf="auth.isAuthenticated$ | async"
-      routerLink="/quiz"
-      (click)="storeCurrentUser()"
-        >Quiz</a
-      >
+
       <a mat-list-item routerLink="/leaderboard" routerLinkActive="active"
         >Leaderboard
       </a>

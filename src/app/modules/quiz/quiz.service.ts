@@ -8,17 +8,9 @@ import { environment } from '../../../environments/environment';
 
 let quizPath = {
   design_resilient: 'assets/data/design_resilient.json',
+  design_performant: 'assets/data/design_performant.json',
   js: 'assets/data/javascript_quiz.json'
 };
-
-// interface Questions {
-//   questions: {
-//     id: number,
-//     multi_choice: boolean,
-//     question: string,
-//     choices: []<string>
-//   }
-// }
 
 @Injectable({
   providedIn: 'root'
@@ -32,11 +24,11 @@ export class QuizService {
 
   getQuestions(subject: any): Observable<any> {
     if (subject == 'design_resilient') {
-      this.quizUrl = 'assets/data/design_resilient.json'
+      this.quizUrl = quizPath.design_resilient
     } else if(subject == 'js') {
       this.quizUrl = 'assets/data/javascript_quiz.json'
     } else if (subject == 'design_performant') {
-      this.quizUrl = 'assets/data/design_performant.json'
+      this.quizUrl = quizPath.design_performant
     }
 
 
@@ -47,10 +39,6 @@ export class QuizService {
       catchError(this.handleError)
     );
   }
-
-  // newMethod(string: string) {
-  //   return this.http.get(`${this.endpoint}/${string}`)
-  // }
 
   addScore(score: number, subject: string, user: string) {
     const date = Date.now();
