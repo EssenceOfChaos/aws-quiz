@@ -9,15 +9,8 @@
   height: 25;
   width: 25;
 }
-.aws-avatar {
-  height: 50px;
-  width: 90px;
-}
+
 .quiz-card-image {
   width: 150px;
   height: 150px;
-}
-.home-title {
-  display: flex;
-  text-align: center;
 }
