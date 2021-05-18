@@ -51,5 +51,9 @@ storeCurrentUser() {
   localStorage.setItem('user', this.currentUser)
 }
 
+logout() {
+  localStorage.clear();
+}
+
 }
 

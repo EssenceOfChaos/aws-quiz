@@ -32,3 +32,7 @@
   align-items: center;
   height: 40px;
 }
+
+.right-align {
+  text-align: right;
+}

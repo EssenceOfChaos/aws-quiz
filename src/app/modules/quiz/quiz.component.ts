@@ -1,6 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { DESIGN_RESILIENT_ANSWERS, JAVASCRIPT_ANSWERS, DESIGN_PERFORMANT_ANSWERS } from './answers';
+import { DESIGN_PERFORMANT_ANSWERS, DESIGN_RESILIENT_ANSWERS } from './answers';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 
@@ -8,7 +8,7 @@ import { QuizService } from './quiz.service';
 import { Title } from '@angular/platform-browser';
 
 interface Answer {
-  id: string;
+  id: number;
   choice: [] | string
 }
 interface Question {
@@ -29,7 +29,6 @@ export class QuizComponent implements OnInit {
   questions: Array<Question> = [];
   question!: Observable<Question>;
   answers: any;
-  // answers = ANSWERS;
   index = 0;
   isAnswered = false;
   quizFinished = false;
@@ -56,29 +55,15 @@ export class QuizComponent implements OnInit {
     console.log('ngOnInit Fired from QuizComponent.');
     this.title.setTitle(this.pageTitle);
     this.subject = this.route.snapshot.paramMap.get('subject');
-    console.log(this.subject)
+    console.log(`Beginning quiz on the subject: ${this.subject}`)
 
     this.quizService.getQuestions(this.subject).subscribe(res => {
       if (res) {
-        console.log(res);
-        this.questions = res.questions;
+        this.shuffleQuestions(res.questions);
       }
     });
 
-    // this.quizService.newMethod(this.subject).subscribe(res => {
-    //   if (res) {
-    //     this.questions = res.questions
-    //   }
-    // })
-
     this.userName = localStorage.getItem('user') || 'Unregistered'
-
-    // const subjects = {
-    //   'js': JAVASCRIPT_ANSWERS,
-    //   'design_resilient': DESIGN_RESILIENT_ANSWERS,
-    //   'design_performant': DESIGN_PERFORMANT_ANSWERS
-
-    // };
 
     if (this.subject == 'design_resilient') {
       this.answers = DESIGN_RESILIENT_ANSWERS
@@ -100,13 +85,13 @@ export class QuizComponent implements OnInit {
     this.incrementProgressBar();
   }
 
-  submitChoice(response: any, multiResponse=false) {
-    console.log(this.index, response);
+  submitChoice(response: any, multiResponse=false, questionId: number) {
+    console.log(this.index, response, questionId);
 
     if (multiResponse) {
-      this.checkMultiAnswer(response.multiChoiceResponse)
+      this.checkMultiAnswer(response.multiChoiceResponse, questionId)
     } else {
-      this.checkAnswer(response);
+      this.checkAnswer(response, questionId);
     }
 
     this.isAnswered = true;
@@ -119,11 +104,10 @@ export class QuizComponent implements OnInit {
     }
   }
 
-  checkAnswer(choice: any) {
-    // console.log(`The user has supplied the response ${choice}`);
-    const answer = this.answers[this.index].choice;
-    // console.log(`The correct answer to the question is ${answer}`);
-    if (choice == answer) {
+  checkAnswer(choice: any, questionId: number) {
+    const answer = this.answers.find((a: Answer) => a.id == questionId)
+
+    if (choice == answer.choice) {
       this.correctAnswer = 'yes';
       this.correctAnswers = this.correctAnswers + 1;
     } else {
@@ -131,18 +115,18 @@ export class QuizComponent implements OnInit {
     }
   }
 
-  checkMultiAnswer(choices: []){
+  checkMultiAnswer(choices: [], questionId: number){
     let validResponse = choices.filter(function (response) {
       return response != null;
     });
-    const answer = this.answers[this.index].choice;
+    const answer = this.answers.find((a: Answer) => a.id == questionId)
     let targetNumber = 0
     let responsesLength = validResponse.length
-    let answersLength = answer.length
+    let answersLength = answer.choice.length
 
     if (responsesLength === answersLength) {
       for (let choice of validResponse) {
-        if (answer.includes(choice)) {
+        if (answer.choice.includes(choice)) {
           targetNumber += 1
         }
       }
@@ -163,7 +147,6 @@ export class QuizComponent implements OnInit {
   }
 
   onCheckboxChange(e: any) {
-    console.log(e);
     const multiChoiceResponse: FormArray = this.form.get('multiChoiceResponse') as FormArray;
     if (e.checked) {
       // console.log(`${e.source.name}`)
@@ -183,9 +166,15 @@ export class QuizComponent implements OnInit {
     }
   }
 
-  // submitForm() {
-  //   console.log(this.form.value)
-  // }
+  shuffleQuestions(arrayOfQuestions: Question[]) {
+    for(let i = arrayOfQuestions.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * i)
+      const temp = arrayOfQuestions[i]
+      arrayOfQuestions[i] = arrayOfQuestions[j]
+      arrayOfQuestions[j] = temp
+    }
+    this.questions = arrayOfQuestions
+  }
 
   incrementProgressBar() {
     // 20 questions means increment 5 per question
