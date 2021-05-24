@@ -4,6 +4,7 @@ import { DESIGN_PERFORMANT_ANSWERS, DESIGN_RESILIENT_ANSWERS } from './answers';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 
+import { MatRadioChange } from '@angular/material/radio';
 import { QuizService } from './quiz.service';
 import { Title } from '@angular/platform-browser';
 
@@ -29,6 +30,7 @@ export class QuizComponent implements OnInit {
   questions: Array<Question> = [];
   question!: Observable<Question>;
   answers: any;
+  // responseSelected = false;
   index = 0;
   isAnswered = false;
   quizFinished = false;
@@ -148,6 +150,10 @@ export class QuizComponent implements OnInit {
 
   onCheckboxChange(e: any) {
     const multiChoiceResponse: FormArray = this.form.get('multiChoiceResponse') as FormArray;
+    // console.log(multiChoiceResponse);
+    // if (multiChoiceResponse.value.length == 2) {
+    //   this.responseSelected = true;
+    // }
     if (e.checked) {
       // console.log(`${e.source.name}`)
       multiChoiceResponse.push(new FormControl(e.source.name));
@@ -175,10 +181,20 @@ export class QuizComponent implements OnInit {
     }
     this.questions = arrayOfQuestions
   }
-
+  /** TODO:increment progress by this.questions.length / 100 */
   incrementProgressBar() {
     // 20 questions means increment 5 per question
     this.quizProgressBar += 5
+  }
+
+  logToConsole(event: MatRadioChange) {
+    // console.log(event);
+    // if (this.responseSelected) {
+    //   this.responseSelected = false;
+    // } else {
+    //   this.responseSelected = true;
+    // }
+
   }
 
 }

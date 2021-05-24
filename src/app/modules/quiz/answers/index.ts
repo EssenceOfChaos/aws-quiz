@@ -1,6 +1,11 @@
 import { DESIGN_RESILIENT_ANSWERS } from './design_resilient_answers';
-import { JAVASCRIPT_ANSWERS } from './javascript';
+import { DESIGN_COST_OPTIMIZED_ANSWERS } from './design_cost_optimized_answers';
 import { DESIGN_PERFORMANT_ANSWERS} from './design_performant_answers';
 import { DESIGN_SECURE_ANSWERS} from './design_secure_answers';
 
-export { JAVASCRIPT_ANSWERS, DESIGN_RESILIENT_ANSWERS, DESIGN_PERFORMANT_ANSWERS, DESIGN_SECURE_ANSWERS};
+export {
+  DESIGN_COST_OPTIMIZED_ANSWERS,
+  DESIGN_RESILIENT_ANSWERS,
+  DESIGN_PERFORMANT_ANSWERS,
+  DESIGN_SECURE_ANSWERS
+};

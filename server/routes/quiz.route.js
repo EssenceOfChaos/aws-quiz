@@ -19,25 +19,27 @@ quizRoute.route('/quizzes').post((req, res) => {
 });
 
 // Get all quizzes
-quizRoute.get('/quizzes', async (req, res) => {
-  try {
-    const quizzes = await Quiz.find();
-    res.json(quizzes);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: err.message });
-  }
-});
+// quizRoute.get('/quizzes', async (req, res) => {
+//   try {
+//     const quizzes = await Quiz.find();
+//     res.json(quizzes);
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json({ message: err.message });
+//   }
+// });
 
-// quizRoute.route('/quizzes').get((req, res) => {
-//   Quiz.find((err, data) => {
-//     if (err) {
-//       return console.error(err);
-//     } else {
-//       res.json(data);
-//     }
-//   })
-// })
+// Sort by date?? -- WIP
+quizRoute.get('/quizzes', (req, res) => {
+  Quiz.find({}).sort([['score', 'desc']]).exec(function (err, docs) {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ message: err.message });
+    } else {
+      res.json(docs);
+    }
+  });
+});
 
 // Get single quiz
 quizRoute.route('/quiz/:id').get((req, res) => {

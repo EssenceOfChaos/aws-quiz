@@ -23,9 +23,12 @@
     >
     {{ choice }}
   </mat-checkbox>
+
+    <!-- Submit checkbox button choices -->
   <mat-card-actions class="submit-button">
     <button
       mat-raised-button
+
       color="primary"
       (click)="submitChoice(form.value, true, questions[index].id)"
       [style.visibility]="isAnswered === true ? 'hidden' : 'visible'"
@@ -36,12 +39,12 @@
   </form>
   </section>
 
-
 <!-- If question requires single selection -->
   <ng-template #useRadioButton>
     <mat-radio-group  class="question-radio-group" [(ngModel)]="response">
       <mat-radio-button
         class="question-radio-button"
+        (change)="logToConsole($event)"
         *ngFor="let choice of questions[index].choices"
         [value]="choice"
       >
@@ -49,6 +52,7 @@
       </mat-radio-button>
     </mat-radio-group>
 
+    <!-- Submit radio button choice -->
     <mat-card-actions class="submit-button">
       <button
         mat-raised-button
@@ -61,6 +65,7 @@
     </mat-card-actions>
   </ng-template>
 
+    <!-- After Submit Actions -->
   <button
     mat-raised-button
     color="accent"

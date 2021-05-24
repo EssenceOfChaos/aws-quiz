@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
@@ -13,12 +13,21 @@ export class LeaderboardService {
   private url = environment.endpoint;
   constructor(private http: HttpClient) {}
 
-  getScores(): Observable<UserInfo> {
-    return this.http.get<UserInfo> (`${this.url}/api/quizzes`).pipe(
+  getScores(): Observable<UserInfo[]> {
+    console.log('LeaderboardService.getScores() - getting the users and their scores')
+    return this.http.get<UserInfo[]> (`${this.url}/api/quizzes`).pipe(
       retry(2),
       catchError(this.handleError)
     );
   }
+
+  // getScores(): Observable<UserInfo> {
+  //   return this.http.get<UserInfo> (`${this.url}/api/quizzes`).pipe(
+  //     retry(2),
+  //     catchError(this.handleError)
+  //   );
+  // }
+
   // General Error Handling Function
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {

@@ -18,7 +18,9 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatTableModule } from "@angular/material/table";
 import { MatToolbarModule } from "@angular/material/toolbar";
+
 import { NgModule } from "@angular/core";
+import { MatSortModule } from "@angular/material/sort";
 @NgModule({
   imports: [CommonModule],
   declarations: [],
@@ -41,7 +43,8 @@ import { NgModule } from "@angular/core";
     MatGridListModule,
     MatPaginatorModule,
     MatCheckboxModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatSortModule
   ]
 })
 export class MaterialModule {}

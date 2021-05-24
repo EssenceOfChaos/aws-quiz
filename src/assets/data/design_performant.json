@@ -10,6 +10,215 @@
         "PostgreSQL",
         "All of the above"
       ]
+    },
+    {
+      "id": 2,
+      "multi_choice": true,
+      "question": "Which of the following is true about a read replica? (Choose two.)",
+      "choices": [
+        "It is a read-only instance of a primary database",
+        "It can only exist in the same region as the primary database, although it can be in a different availability zone",
+        "It is updated via asynchronous replication from the primary instance",
+        "It is updated via synchronous replication from the primary instance"
+      ]
+    },
+    {
+      "id": 3,
+      "multi_choice": false,
+      "question": "Which of the following statements is true?",
+      "choices": [
+        "A Multi-AZ setup is aimed at fault tolerance, while a read replica setup is aimed at scalability",
+        "Both read replicas and Multi-AZ configurations are aimed at fault tolerance",
+        "A Multi-AZ setup is aimed at scalability, while a read replica setup is aimed at fault tolerance",
+        "Both read replicas and Multi-AZ configurations are aimed at scalability"
+      ]
+    },
+    {
+      "id": 4,
+      "multi_choice": false,
+      "question": "How many EC2 instances can be attached to a single EBS volume at one time?",
+      "choices": [
+        "1",
+        "2",
+        "27",
+        "Unlimited"
+      ]
+    },
+    {
+      "id": 5,
+      "multi_choice": false,
+      "question": "You launch an EC2 instance that has two volumes attached: a root and an additional volume, both created with default settings. What happens to each volume when you terminate the instance?",
+      "choices": [
+        "The root volume is deleted and the additional volume is preserved",
+        "Both volumes are deleted",
+        "Both volumes are preserved",
+        "The instance is unable to terminate until the root volume is deleted"
+      ]
+    },
+    {
+      "id": 6,
+      "multi_choice": false,
+      "question": "In which of the following situations would you recommend using a placement group?",
+      "choices": [
+        "Your fleet of EC2 instances requires high disk IO",
+        "Your fleet of EC2 instances requires high network throughput across two availability zones",
+        "Your fleet of EC2 instances requires high network throughput within a single availability zone",
+        "Your fleet of EC2 instances requires high network throughput to S3 buckets"
+      ]
+    },
+    {
+      "id": 7,
+      "multi_choice": false,
+      "question": "Which of the following is a valid reason to use a cold HDD EBS volume?",
+      "choices": [
+        "You need a performant solid-state drive",
+        "You are trying to choose the lowest-cost EBS volume possible",
+        "You are performing data warehousing using the volume",
+        "You need an inexpensive boot volume"
+      ]
+    },
+    {
+      "id": 8,
+      "multi_choice": true,
+      "question": "Which of the following is a valid reason to use a provisioned IOPS EBS volume? (Choose two.)",
+      "choices": [
+        "You want a low-cost option for your EBS volume",
+        "You need to support a large MongoDB database workload",
+        "You need massive performance and throughput for your applications",
+        "You have applications that need a bootable environment but can fail from time to time and be re-created"
+      ]
+    },
+    {
+      "id": 9,
+      "multi_choice": true,
+      "question": "What engines does ElastiCache provide for caching? (Choose two.)",
+      "choices": [
+        "Memcached",
+        "AWS-WebCache",
+        "Redis",
+        "GitCache"
+      ]
+    },
+    {
+      "id": 10,
+      "multi_choice": true,
+      "question": "Which of the following cannot be used as an EBS boot volume? (Choose two.)",
+      "choices": [
+        "General SSD",
+        "Throughput-optimized HDD",
+        "Cold HDD",
+        "Magnetic"
+      ]
+    },
+    {
+      "id": 11,
+      "multi_choice": true,
+      "question": "How does CloudFront increase the security of content at the edge? (Choose two.)",
+      "choices": [
+        "Required HTTPS at all edge locations",
+        "Integration with AWS WAF (if configured)",
+        "Automatic client keys encrypted with KMS",
+        "Automatic deployment of AWS Shield"
+      ]
+    },
+    {
+      "id": 12,
+      "multi_choice": true,
+      "question": "Choose the true statements about edge locations. (Choose two.)",
+      "choices": [
+        "There are fewer edge locations than regions",
+        "There are more edge locations than regions",
+        "There are fewer edge locations than availability zones",
+        "There are more edge locations than availability zones"
+      ]
+    },
+    {
+      "id": 13,
+      "multi_choice": false,
+      "question": "How long is content cached at an edge location?",
+      "choices": [
+        "24 hours",
+        "12 hours",
+        "12 hours by default, but this value can be changed",
+        "24 hours by default, but this value can be changed"
+      ]
+    },
+    {
+      "id": 14,
+      "multi_choice": false,
+      "question": "Why would you set the expiration period to 0 on a CloudFront distribution?",
+      "choices": [
+        "To expire all content on all existing edge locations",
+        "To ensure caching does not occur for maximum throughput",
+        "To reduce the chances of a DDoS attack on your edge locations",
+        "To ensure the most up-to-date content is served at all edge locations"
+      ]
+    },
+    {
+      "id": 15,
+      "multi_choice": false,
+      "question": "Which of the following immediately removes an object from all edge locations?",
+      "choices": [
+        "Removing the object from all origin servers",
+        "Removing all CloudFront edge locations with the object cached",
+        "Removing the object using the invalidation API",
+        "Invalidating the CloudFront distribution"
+      ]
+    },
+    {
+      "id": 16,
+      "multi_choice": false,
+      "question": "Which of the following storage classes provides the fastest data retrieval speeds?",
+      "choices": [
+        "S3",
+        "S3-IA",
+        "S3 One Zone-IA",
+        "They are all identical"
+      ]
+    },
+    {
+      "id": 17,
+      "multi_choice": false,
+      "question": "What is an ElastiCache shard?",
+      "choices": [
+        "A collection of multiple nodes that make up a cluster",
+        "A collection of clusters in an ElastiCache distribution",
+        "A collection of edge locations in an ElastiCache distribution",
+        "A single node in a cluster"
+      ]
+    },
+    {
+      "id": 18,
+      "multi_choice": false,
+      "question": "Which of the following provides the fastest access to a customer dataset?",
+      "choices": [
+        "S3 with Transfer Acceleration",
+        "Storage gateway – virtual tape library",
+        "Storage gateway – stored volume",
+        "S3 standard"
+      ]
+    },
+    {
+      "id": 19,
+      "multi_choice": true,
+      "question": "Which of the following can ElastiCache be used for? (Choose two.)",
+      "choices": [
+        "Ephemeral storage",
+        "Long-term storage",
+        "Message Queue",
+        "Logging store"
+      ]
+    },
+    {
+      "id": 20,
+      "multi_choice": true,
+      "question": "Which of the following are valid routing policies for Route 53? (Choose two.)",
+      "choices": [
+        "Simple routing",
+        "Fault recovery routing",
+        "Latency-based routing",
+        "Cached routing"
+      ]
     }
   ]
 }

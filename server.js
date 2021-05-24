@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 const database = require('./server/config/db');
 const logger = require('./server/config/logger');
 const quizRoute = require('./server/routes/quiz.route')
+const app_data = require('./package.json');
 
 if (process.env.NODE_ENV == 'development') {
   logger.info("Node is starting in DEVELOPMENT mode.");
@@ -59,7 +60,9 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, 'dist/aws-quiz')));
 
 app.use('/api', quizRoute)
-
+app.get('/version', (req, res) => {
+  res.send(app_data.version)
+})
 // Create port
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {

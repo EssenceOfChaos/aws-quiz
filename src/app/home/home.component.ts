@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-
 import { Router } from '@angular/router';
 import { Subject } from 'src/app/subjects/subjects.component';
 
@@ -21,7 +19,7 @@ export class HomeComponent implements OnInit {
       value: 'design_performant',
       viewValue: 'Performant Architectures',
       image: '/assets/images/speedometer.png',
-      enabled: false
+      enabled: true
     },
     {
       value: 'design_cost_optimized',
@@ -37,10 +35,6 @@ export class HomeComponent implements OnInit {
     }
   ];
   constructor(public router: Router) { }
-
-  // userForm = new FormGroup({
-  //   subject: new FormControl('')
-  // });
 
   ngOnInit(): void {
   }
