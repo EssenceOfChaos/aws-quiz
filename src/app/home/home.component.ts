@@ -11,27 +11,27 @@ export class HomeComponent implements OnInit {
   subjects: Subject[] = [
     {
       value: 'design_resilient',
-      viewValue: 'Resilient Architectures',
+      viewValue: 'Resiliency',
       image: '/assets/images/backup.png',
       enabled: true
     },
     {
       value: 'design_performant',
-      viewValue: 'Performant Architectures',
+      viewValue: 'Performance',
       image: '/assets/images/speedometer.png',
       enabled: true
     },
     {
       value: 'design_cost_optimized',
-      viewValue: 'Cost-Optimized Architectures',
+      viewValue: 'Cost Optimization',
       image: '/assets/images/low-prices.png',
       enabled: false
     },
     {
       value: 'design_secure',
-      viewValue: 'Secure Applications',
+      viewValue: 'Security',
       image: '/assets/images/shield.png',
-      enabled: false
+      enabled: true
     }
   ];
   constructor(public router: Router) { }

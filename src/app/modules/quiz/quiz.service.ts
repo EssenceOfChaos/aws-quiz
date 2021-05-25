@@ -9,7 +9,8 @@ import { environment } from '../../../environments/environment';
 let quizPath = {
   design_resilient: 'assets/data/design_resilient.json',
   design_performant: 'assets/data/design_performant.json',
-  js: 'assets/data/javascript_quiz.json'
+  design_secure: 'assets/data/design_secure.json',
+  design_cost_optimized: 'assets/data/design_cost_optimized.json'
 };
 
 @Injectable({
@@ -25,10 +26,12 @@ export class QuizService {
   getQuestions(subject: any): Observable<any> {
     if (subject == 'design_resilient') {
       this.quizUrl = quizPath.design_resilient
-    } else if(subject == 'js') {
-      this.quizUrl = 'assets/data/javascript_quiz.json'
+    } else if(subject == 'design_secure') {
+      this.quizUrl = quizPath.design_secure
     } else if (subject == 'design_performant') {
       this.quizUrl = quizPath.design_performant
+    } else if (subject == 'design_cost_optimized') {
+      this.quizUrl = quizPath.design_cost_optimized
     }
 
 

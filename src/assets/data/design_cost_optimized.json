@@ -1,5 +1,15 @@
 {
   "questions": [
-
+    {
+      "id": 1,
+      "multi_choice": true,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    }
   ]
 }

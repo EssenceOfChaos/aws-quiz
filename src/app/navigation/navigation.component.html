@@ -16,8 +16,12 @@
         >
           Log out
         </a>
-        <a mat-list-item routerLink="/subjects" routerLinkActive="active"
-        >Subjects</a>
+        <a
+        mat-list-item
+        routerLink="/subjects"
+        routerLinkActive="active"
+        >Subjects
+      </a>
       </ng-container>
 
       <ng-template #loggedOut>
@@ -48,7 +52,17 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <!-- <span class="clickable_link" routerLink="/">AWS-Quiz</span> -->
-      <span class="example-spacer"></span>
+      <span class="space_between"></span>
+      <button
+      mat-mini-fab
+      color="accent"
+      aria-label="Feedback button"
+      matTooltip="Provide Feedback"
+      routerLink="/feedback"
+      >
+        <mat-icon>feedback</mat-icon>
+      </button>
+
       <mat-chip color="primary" *ngIf="auth.user$ | async as user" selected>{{
         user.name
       }}</mat-chip>

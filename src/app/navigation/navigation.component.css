@@ -16,10 +16,10 @@
   z-index: 1;
 }
 
-.example-spacer {
+.space_between {
   flex: 1 1 auto;
 }
 
-.clickable_link:hover{
+.clickable_link:hover {
   cursor: pointer;
 }

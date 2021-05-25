@@ -15,6 +15,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { NgModule } from '@angular/core';
 import { ProfileComponent } from './profile/profile.component';
 import { SubjectsComponent } from './subjects/subjects.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SubjectsComponent } from './subjects/subjects.component';
     ProfileComponent,
     HomeComponent,
     LeaderboardComponent,
-    SubjectsComponent
+    SubjectsComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,

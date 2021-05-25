@@ -66,7 +66,7 @@ export class LeaderboardComponent implements OnInit, AfterViewInit {
 }
 
   getUserScores(){
-    console.log('getting scores')
+    // console.log('getting scores')
     this.dataSource.getUserScores();
   }
 }

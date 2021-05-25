@@ -1,6 +1,11 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { DESIGN_PERFORMANT_ANSWERS, DESIGN_RESILIENT_ANSWERS } from './answers';
+import {
+  DESIGN_PERFORMANT_ANSWERS,
+  DESIGN_RESILIENT_ANSWERS,
+  DESIGN_SECURE_ANSWERS,
+  DESIGN_COST_OPTIMIZED_ANSWERS
+} from './answers';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 
@@ -67,10 +72,15 @@ export class QuizComponent implements OnInit {
 
     this.userName = localStorage.getItem('user') || 'Unregistered'
 
+    // select answers based on the subject
     if (this.subject == 'design_resilient') {
       this.answers = DESIGN_RESILIENT_ANSWERS
     } else if (this.subject == 'design_performant') {
       this.answers = DESIGN_PERFORMANT_ANSWERS
+    } else if (this.subject == 'design_secure') {
+      this.answers = DESIGN_SECURE_ANSWERS
+    } else if (this.subject == 'design_cost_optimized') {
+      this.answers = DESIGN_COST_OPTIMIZED_ANSWERS
     }
 
   }

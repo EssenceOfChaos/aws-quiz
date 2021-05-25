@@ -1,5 +1,224 @@
 {
   "questions": [
-
+    {
+      "id": 1,
+      "multi_choice": true,
+      "question": "What types of rules does a security group allow? (Choose two.)",
+      "choices": [
+        "Allow rules",
+        "Prevent rules",
+        "Deny rules",
+        "Inbound rules"
+      ]
+    },
+    {
+      "id": 2,
+      "multi_choice": true,
+      "question": "Which of the following must a security group have when you create it? (Choose two.)",
+      "choices": [
+        "At least one inbound rule",
+        "A name",
+        "A description",
+        "At least one outbound rule"
+      ]
+    },
+    {
+      "id": 3,
+      "multi_choice": false,
+      "question": "Which of the following is not a way to manage server-side encryption keys for S3?",
+      "choices": [
+        "SSE-S3",
+        "SSE-KMS",
+        "SSE-E",
+        "SSE-C"
+      ]
+    },
+    {
+      "id": 4,
+      "multi_choice": false,
+      "question": "Which of the following encryption key management options is best for ensuring strong audit trails?",
+      "choices": [
+        "SSE-S3",
+        "SSE-KMS",
+        "Client-side encryption keys",
+        "SSE-C"
+      ]
+    },
+    {
+      "id": 5,
+      "multi_choice": false,
+      "question": "What type of replication will your Multi-AZ RDS instances use?",
+      "choices": [
+        "Offline replication",
+        "Synchronous replication",
+        "Push replication",
+        "Asynchronous replication"
+      ]
+    },
+    {
+      "id": 6,
+      "multi_choice": false,
+      "question": "You want to provide maximum protection against data in your S3 object storage being deleted accidentally. What should you do?",
+      "choices": [
+        "Enable versioning on your EBS volumes",
+        "Turn on MFA Delete on your S3 buckets",
+        "Set up a Lambda job to monitor and block delete requests to S3",
+        "Turn off the DELETE endpoints on the S3 REST API"
+      ]
+    },
+    {
+      "id": 7,
+      "multi_choice": false,
+      "question": "You want to enable MFA Delete on your S3 buckets in the US East 1 region. What step must you take before enabling MFA Delete?",
+      "choices": [
+        "Disable the REST API for the buckets on which you want MFA Delete",
+        "Enable cross-region replication on the buckets on which you want MFA Delete",
+        "Move the buckets to a region that supports MFA Delete, such as US West 1",
+        "Enable versioning on the buckets on which you want MFA Delete"
+      ]
+    },
+    {
+      "id": 8,
+      "multi_choice": false,
+      "question": "What is AWS Trusted Advisor?",
+      "choices": [
+        "An online resource to help you improve performance",
+        "An online resource to help you reduce cost",
+        "An online resource to help you improve security",
+        "All of the above"
+      ]
+    },
+    {
+      "id": 9,
+      "multi_choice": true,
+      "question": "Which of the following are not true about S3 encryption? (Choose two.)",
+      "choices": [
+        "S3 applies AWS-256 encryption to data when server-side encryption is enabled",
+        "S3 encryption will use a client key if it is supplied with data",
+        "Encrypted EBS volumes can only be stored if server-side encryption is enabled",
+        "S3 will accept locally encrypted data if client-side encryption is enabled"
+      ]
+    },
+    {
+      "id": 10,
+      "multi_choice": true,
+      "question": "What types of data are not automatically encrypted when you create an encrypted EBS volume? (Choose two.)",
+      "choices": [
+        "A snapshot created from the EBS volume",
+        "Any data on additional volumes attached to the same instance as the encrypted volume",
+        "Data created on an instance that has the encrypted volume attached",
+        "Data moving between the volume and the attached instance"
+      ]
+    },
+    {
+      "id": 11,
+      "multi_choice": false,
+      "question": "What encryption service is used by encrypted EBS volumes?",
+      "choices": [
+        "S3-KMS",
+        "S3-C",
+        "KMS",
+        "Customer-managed keys"
+      ]
+    },
+    {
+      "id": 12,
+      "multi_choice": false,
+      "question": "How can you access the private IP address of a running EC2 instance?",
+      "choices": [
+        "http://169.254.169.254/latest/user-data/",
+        "http://169.254.169.254/latest/instance-data/",
+        "http://169.254.169.254/latest/meta-data/",
+        "http://169.254.169.254/latest/ec2-data/"
+      ]
+    },
+    {
+      "id": 13,
+      "multi_choice": true,
+      "question": "If you take a snapshot of an encrypted EBS volume, which of the following must you do to use that snapshot as a volume in a separate region? (Choose two.)",
+      "choices": [
+        "Copy the snapshot to the new region",
+        "Delete the snapshot from the old region",
+        "Unencrypt the snapshot once it is in the new region",
+        "Create a new volume from the snapshot in the new region"
+      ]
+    },
+    {
+      "id": 14,
+      "multi_choice": false,
+      "question": "How do you encrypt an RDS instance?",
+      "choices": [
+        "Enable encryption on the running instance via the CLI",
+        "Enable encryption on the running instance via the console",
+        "Run the encryption process on the running instance via the console",
+        "Enable encryption when creating the instance"
+      ]
+    },
+    {
+      "id": 15,
+      "multi_choice": false,
+      "question": "In which order are NACLs and security groups evaluated?",
+      "choices": [
+        "NACLs and security groups are evaluated in parallel",
+        "A NACL is evaluated first, and then the security group",
+        "A security group is evaluated first, and then the NACL",
+        "It depends on the VPC setup"
+      ]
+    },
+    {
+      "id": 16,
+      "multi_choice": true,
+      "question": "Which of the following are true about the default NACL that comes with the default VPC? (Choose two.)",
+      "choices": [
+        "It allows all inbound traffic",
+        "It allows all outbound traffic",
+        "It disallows all inbound traffic",
+        "It disallows all outbound traffic"
+      ]
+    },
+    {
+      "id": 17,
+      "multi_choice": true,
+      "question": "Which of the following are true about a user-created NACL? (Choose two.)",
+      "choices": [
+        "It allows all inbound traffic",
+        "It allows all outbound traffic",
+        "It disallows all inbound traffic",
+        "It disallows all outbound traffic"
+      ]
+    },
+    {
+      "id": 18,
+      "multi_choice": false,
+      "question": "In which order are rules in a NACL evaluated?",
+      "choices": [
+        "From low to high, using the number on the rule",
+        "From high to low, using the number on the rule",
+        "From low to high, using the port of the rule",
+        "From high to low, using the port of the rule"
+      ]
+    },
+    {
+      "id": 19,
+      "multi_choice": false,
+      "question": "With how many subnets can a NACL be associated?",
+      "choices": [
+        "One",
+        "One or more",
+        "A NACL is associated with instances, not subnets",
+        "A NACL is associated with VPCs, not subnets"
+      ]
+    },
+    {
+      "id": 20,
+      "multi_choice": false,
+      "question": "With how many NACLs can a subnet be associated?",
+      "choices": [
+        "One",
+        "One or more",
+        "A subnet is associated with security groups, not NACLs",
+        "A subnet is associated with VPCs, not NACLs"
+      ]
+    }
   ]
 }

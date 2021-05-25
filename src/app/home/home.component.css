@@ -1,5 +1,5 @@
 .subject-card {
-  min-width: 350px;
+  min-width: 280px;
   margin-bottom: 20px;
   margin-left: 40px;
   margin-top: 10px;
@@ -13,4 +13,12 @@
 .quiz-card-image {
   width: 150px;
   height: 150px;
+}
+
+.mat-raised-button {
+  width: 100%;
+}
+
+.subject_title {
+  text-align: center;
 }

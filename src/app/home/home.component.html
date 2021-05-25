@@ -24,7 +24,7 @@
     <mat-card class="subject-card">
       <mat-card-header>
         <div mat-card-avatar > <img src="{{subject.image}}" class="mat-card-avatar"></div>
-        <mat-card-title>{{subject.viewValue}}</mat-card-title>
+        <mat-card-title class="subject_title">{{subject.viewValue}}</mat-card-title>
         <mat-card-subtitle *ngIf="subject.enabled">20 Questions</mat-card-subtitle>
         <mat-card-subtitle *ngIf="!subject.enabled">Coming Soon!</mat-card-subtitle>
       </mat-card-header>

@@ -14,15 +14,15 @@ export class LeaderboardService {
   constructor(private http: HttpClient) {}
 
   getScores(): Observable<UserInfo[]> {
-    console.log('LeaderboardService.getScores() - getting the users and their scores')
+    // console.log('LeaderboardService.getScores() - getting the users and their scores')
     return this.http.get<UserInfo[]> (`${this.url}/api/quizzes`).pipe(
       retry(2),
       catchError(this.handleError)
     );
   }
 
-  // getScores(): Observable<UserInfo> {
-  //   return this.http.get<UserInfo> (`${this.url}/api/quizzes`).pipe(
+  // getScores(): Observable<UserInfo[]> {
+  //   return this.http.get<UserInfo[]> (`${this.url}/api/quizzes`).pipe(
   //     retry(2),
   //     catchError(this.handleError)
   //   );
