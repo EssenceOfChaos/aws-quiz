@@ -1,9 +1,15 @@
 <mat-progress-bar color="accent" mode="determinate" value="{{quizProgressBar}}"></mat-progress-bar>
 
 <mat-card class="question-card" *ngIf="questions.length">
-  <h3>Question # {{ index + 1 }} of {{ questions.length }}</h3>
+  <h2>Question # {{ index + 1 }} of {{ questions.length }}</h2>
   <mat-card-subtitle class="right-align">
-    <span [matBadge]="correctAnswers" matBadgeOverlap="false"> Correct Answers</span>
+    <p
+    *ngIf="correctAnswers"
+    [matBadge]="correctAnswers"
+    matBadgeOverlap="false"
+    >
+    Correct
+  </p>
 
   </mat-card-subtitle>
   <mat-card-content>

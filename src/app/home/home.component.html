@@ -4,16 +4,16 @@
       <!-- <img src="/assets/images/aws_logo.png" class="aws-avatar"/> -->
     </div>
     <mat-card-title class="home-title">
-      Welcome to AWS-Quiz!
+      <h1>Prepare for the Solutions Architect Certification - SAA-C02</h1>
     </mat-card-title>
     <mat-card-subtitle>
-      <h2>
+      <h3>
         To get started, select a subject to test on...
-      </h2>
+      </h3>
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-  <p>Remember to log in if you want your score saved.</p>
+
 
   </mat-card-content>
 </mat-card>
@@ -24,7 +24,7 @@
     <mat-card class="subject-card">
       <mat-card-header>
         <div mat-card-avatar > <img src="{{subject.image}}" class="mat-card-avatar"></div>
-        <mat-card-title class="subject_title">{{subject.viewValue}}</mat-card-title>
+        <mat-card-title>{{subject.viewValue}}</mat-card-title>
         <mat-card-subtitle *ngIf="subject.enabled">20 Questions</mat-card-subtitle>
         <mat-card-subtitle *ngIf="!subject.enabled">Coming Soon!</mat-card-subtitle>
       </mat-card-header>

@@ -194,6 +194,7 @@ export class QuizComponent implements OnInit {
   /** TODO:increment progress by this.questions.length / 100 */
   incrementProgressBar() {
     // 20 questions means increment 5 per question
+    this.questions.length
     this.quizProgressBar += 5
   }
 
@@ -206,6 +207,7 @@ export class QuizComponent implements OnInit {
     // }
 
   }
+
 
 }
 

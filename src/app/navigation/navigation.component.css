@@ -23,3 +23,7 @@
 .clickable_link:hover {
   cursor: pointer;
 }
+
+.mat_icon {
+  color: white;
+}
