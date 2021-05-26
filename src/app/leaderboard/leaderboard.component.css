@@ -4,3 +4,8 @@ table {
 th.mat-sort-header-sorted {
   color: black;
 }
+.page_title {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+}

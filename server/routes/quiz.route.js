@@ -29,9 +29,10 @@ quizRoute.route('/quizzes').post((req, res) => {
 //   }
 // });
 
-// Sort by date?? -- WIP
+// Sort by score -- WIP
 quizRoute.get('/quizzes', (req, res) => {
-  Quiz.find({}).sort([['score', 'desc']]).exec(function (err, docs) {
+  console.log("Query:\t   " + JSON.stringify(req.query));
+  Quiz.find({}).sort('-score').collation({ locale: "en_US", numericOrdering: true }).exec(function (err, docs) {
     if (err) {
       console.error(err);
       res.status(500).json({ message: err.message });
