@@ -2,6 +2,61 @@
   "questions": [
     {
       "id": 1,
+      "multi_choice": false,
+      "question": "How do you move a reserved instance from one region to another?",
+      "choices": [
+        "Shut the instance down, change its region via the console or CLI, and restart the instance",
+        "Contact your AWS billing resource to manually move the instance and its associated billing",
+        "Make a snapshot of the instance, copy the snapshot to the new region, and start the instance from the snapshot",
+        "You cannot move reserved instances across regions"
+      ]
+    },
+    {
+      "id": 2,
+      "multi_choice": false,
+      "question": "Which of the following allows you the least expensive access to compute resources?",
+      "choices": [
+        "On-demand instances",
+        "Reserved instances",
+        "Spot instances",
+        "Dedicated hosts"
+      ]
+    },
+    {
+      "id": 3,
+      "multi_choice": false,
+      "question": "Is the S3-IA storage class less expensive than S3?",
+      "choices": [
+        "Yes",
+        "No",
+        "Their costs are identical",
+        "It depends on how the storage class is used"
+      ]
+    },
+    {
+      "id": 4,
+      "multi_choice": false,
+      "question": "Which EBS volume type is most appropriate for use with a large database workload?",
+      "choices": [
+        "EBS with a throughput optimized HDD",
+        "EBS with a General Purpose SSD",
+        "EBS with a provisioned IOPS SSD",
+        "EBS with a magnetic HDD"
+      ]
+    },
+    {
+      "id": 5,
+      "multi_choice": true,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 6,
       "multi_choice": true,
       "question": "",
       "choices": [

@@ -20,22 +20,22 @@ export class SubjectsComponent implements OnInit {
   subjects: Subject[] = [
     {
       value: 'design_resilient',
-      viewValue: 'Design Resilient Architectures',
+      viewValue: 'Resilient Systems',
       image: '/assets/images/backup.png'
     },
     {
       value: 'design_performant',
-      viewValue: 'Design Performant Architectures',
+      viewValue: 'Performance',
       image: '/assets/images/speedometer.png'
     },
     {
       value: 'design_cost_optimized',
-      viewValue: 'Design Cost-Optimized Architectures',
+      viewValue: 'Cost-Optimization',
       image: '/assets/images/low-prices.png'
     },
     {
       value: 'specify_secure',
-      viewValue: 'Specify Secure Applications',
+      viewValue: 'Secure Applications',
       image: '/assets/images/shield.png'
     }
   ];

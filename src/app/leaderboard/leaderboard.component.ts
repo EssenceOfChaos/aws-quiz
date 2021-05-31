@@ -32,7 +32,6 @@ export class LeaderboardComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['user', 'score', 'subject', 'date'];
 
   // dataSource = new MatTableDataSource<UserInfo>();
-  // dataSource is fetched from the lb service
   // dataSource needs to be type of MatTableDataSource for sorting and pagination to work
   // dataSource: MatTableDataSource<UserInfo>;
 
@@ -55,13 +54,13 @@ export class LeaderboardComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
 
-    this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
+    // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
 
-    merge(this.sort.sortChange, this.paginator.page)
-    .pipe(
-        tap(() => this.getUserScores())
-    )
-    .subscribe();
+    // merge(this.sort.sortChange, this.paginator.page)
+    // .pipe(
+    //     tap(() => this.getUserScores())
+    // )
+    // .subscribe();
 
 }
 

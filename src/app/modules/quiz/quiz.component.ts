@@ -99,7 +99,7 @@ export class QuizComponent implements OnInit {
 
   submitChoice(response: any, multiResponse=false, questionId: number) {
     console.log(this.index, response, questionId);
-
+    // check if the response is correct
     if (multiResponse) {
       this.checkMultiAnswer(response.multiChoiceResponse, questionId)
     } else {

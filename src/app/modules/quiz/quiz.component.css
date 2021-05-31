@@ -37,3 +37,8 @@
 .right-align {
   text-align: right;
 }
+
+.page_title {
+  text-align: center;
+  margin-top: 20px;
+}

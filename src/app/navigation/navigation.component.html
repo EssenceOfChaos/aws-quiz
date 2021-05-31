@@ -7,12 +7,13 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false"
   >
-    <mat-toolbar class="clickable_link" routerLink="/">AWSQuiz</mat-toolbar>
+    <mat-toolbar class="clickable_link" routerLink="/"><h1>AWS-Quiz</h1></mat-toolbar>
+    <mat-divider></mat-divider>
     <mat-nav-list>
       <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
         <a
           mat-list-item
-          (click)="auth.logout({ returnTo: document.location.origin })"
+          (click)="logout({ returnTo: document.location.origin })"
         >
           Log out
         </a>
@@ -41,36 +42,38 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
+
     <mat-toolbar color="primary">
+
       <button
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async"
-      >
+        *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <!-- <span class="clickable_link" routerLink="/">AWS-Quiz</span> -->
+
+      <mat-chip color="primary" *ngIf="auth.user$ | async as user" selected>
+        {{user.name}}
+      </mat-chip>
+
       <span class="space_between"></span>
+
       <button
       mat-mini-fab
       color="accent"
       aria-label="Feedback button"
-      matTooltip="Provide Feedback"
-      >
+      matTooltip="Provide Feedback">
       <a
         href="https://survey.typeform.com/to/sDXsa6AH"
         target="_blank">
         <mat-icon class="mat_icon">feedback</mat-icon>
       </a>
-
       </button>
 
-      <mat-chip color="primary" *ngIf="auth.user$ | async as user" selected>{{
-        user.name
-      }}</mat-chip>
     </mat-toolbar>
+
     <mat-card class="home-card" *ngIf="!auth.isAuthenticated$">
       <mat-card-header>
         <div mat-card-avatar class="home-card-image"></div>
@@ -84,6 +87,6 @@
 
     <!-- Routed Components Show Up Here-->
     <router-outlet></router-outlet>
-    <!--///-->
+    <!-- // Routed Components Show Up Here-->
   </mat-sidenav-content>
 </mat-sidenav-container>

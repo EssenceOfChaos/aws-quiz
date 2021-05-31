@@ -6,15 +6,6 @@ import { map, shareReplay } from 'rxjs/operators';
 import { AuthService } from '@auth0/auth0-angular';
 import { DOCUMENT } from '@angular/common';
 
-// interface User {
-// nickname: string;
-// name: string;
-// picture: string;
-// updated_at: string;
-// email: string;
-// email_verified: string;
-// sub: string;
-// }
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -22,7 +13,7 @@ import { DOCUMENT } from '@angular/common';
 })
 export class NavigationComponent {
 
-  private profileJson: any;
+  // private profileJson: any;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -36,23 +27,20 @@ export class NavigationComponent {
     public auth: AuthService
     ) {}
     ngOnInit() {
-      this.auth.user$.subscribe(
-        (profile) => {
-          (this.profileJson = profile)
-        }
-      );
+      console.log('NavigationComponent: ngOnInit')
     }
 
-get currentUser() {
-  return this.profileJson.name
-}
+// get currentUser() {
+//   return this.profileJson.name
+// }
 
-storeCurrentUser() {
-  localStorage.setItem('user', this.currentUser)
-}
+// storeCurrentUser() {
+//   localStorage.setItem('user', this.currentUser)
+// }
 
-logout() {
+logout(returnToObject: any) {
   localStorage.clear();
+  this.auth.logout(returnToObject)
 }
 
 }
