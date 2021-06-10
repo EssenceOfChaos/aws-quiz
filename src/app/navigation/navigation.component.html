@@ -61,10 +61,19 @@
       <span class="space_between"></span>
 
       <button
-      mat-mini-fab
-      color="accent"
-      aria-label="Feedback button"
-      matTooltip="Provide Feedback">
+        (click)="openDialog()"
+        mat-mini-fab
+        color="accent"
+        aria-label="Feedback button"
+        matTooltip="View QuickTip">
+        <mat-icon class="mat_icon">info</mat-icon>
+      </button>
+
+      <button
+        mat-mini-fab
+        color="accent"
+        aria-label="Feedback button"
+        matTooltip="Provide Feedback">
       <a
         href="https://survey.typeform.com/to/sDXsa6AH"
         target="_blank">

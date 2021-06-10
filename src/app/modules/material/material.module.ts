@@ -21,6 +21,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgModule } from "@angular/core";
 import { MatSortModule } from "@angular/material/sort";
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   imports: [CommonModule],
   declarations: [],
@@ -45,7 +46,8 @@ import { MatSortModule } from "@angular/material/sort";
     MatCheckboxModule,
     MatBadgeModule,
     MatSortModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule {}

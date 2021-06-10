@@ -46,24 +46,178 @@
     },
     {
       "id": 5,
-      "multi_choice": true,
-      "question": "",
+      "multi_choice": false,
+      "question": "Which of the following costs the least?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "Retrieving a file from S3 to a local desktop client",
+        "An instance retrieving data from S3 in the same region",
+        "Uploading a file to S3 from a local desktop client",
+        "An instance retrieving data from S3 in a different region"
       ]
     },
     {
       "id": 6,
-      "multi_choice": true,
-      "question": "",
+      "multi_choice": false,
+      "question": "Which of the following is not a pricing model for instances?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "On demand",
+        "Reserved",
+        "Migration only",
+        "Spot instance"
+      ]
+    },
+    {
+      "id": 7,
+      "multi_choice": false,
+      "question": "Which of these S3 storage classes is the most durable?",
+      "choices": [
+        "S3",
+        "S3-IA",
+        "SC One Zone-IA",
+        "All of these classes are equally durable"
+      ]
+    },
+    {
+      "id": 8,
+      "multi_choice": false,
+      "question": "Your AWS hosted application requires a minimum of 12 c1.medium instances running the Amazon Linux 2 AMI. What service allows you to implement a highly available design that would replace an instance if it failed health checks?",
+      "choices": [
+        "Auto-scaling",
+        "VPC Healing",
+        "ELB",
+        "CloudFormation"
+      ]
+    },
+    {
+      "id": 9,
+      "multi_choice": false,
+      "question": "You are new on a project that makes heavy use of AWS. Your first priority is to reduce costs and identify security risks. What tool could you use to scan the existing environment and set initial priorities for change?",
+      "choices": [
+        "CloudTrail",
+        "Trusted Advisor",
+        "AWS Organizations",
+        "AWS Directory Server"
+      ]
+    },
+    {
+      "id": 10,
+      "multi_choice": false,
+      "question": "Your new online concert chat service is expected to attract 2+ million users. You have a requirement to track activity for analytics and marketing. What can you use to authenticate these users without creating an internal database?",
+      "choices": [
+        "IAM",
+        "Cognito",
+        "AWS single sign-on",
+        "AWS Chatbot"
+      ]
+    },
+    {
+      "id": 11,
+      "multi_choice": false,
+      "question": "Your EMR cluster uses S3 for data snapshots. In order to reduce costs, you want to implement a storage option that is cost effective with the trade-off of reduced availability. What is a good solution to accomplish this?",
+      "choices": [
+        "S3 One Zone-IA",
+        "S3-IA",
+        "Glacier",
+        "Athena"
+      ]
+    },
+    {
+      "id": 12,
+      "multi_choice": false,
+      "question": "Which of the following is the least expensive EBS volume type?",
+      "choices": [
+        "Throughput optimized HDD",
+        "General Purpose SSD",
+        "Provisioned IOPS SSD",
+        "Cold HDD"
+      ]
+    },
+    {
+      "id": 13,
+      "multi_choice": true,
+      "question": "Which of the following are AWS-supported solutions for encrypting data at rest when that data is objects stored in S3 buckets? (Choose two.)",
+      "choices": [
+        "ElastiCache for memcached",
+        "AWS Key Management Service",
+        "Customer-provided keys",
+        "AWS Encryptic"
+      ]
+    },
+    {
+      "id": 14,
+      "multi_choice": true,
+      "question": "You are in charge of building a business intelligence application that can handle multiple data sources and perform analytics at a large scale. Which of the following services and tools would allow you to build a cost-effective solution? (Choose two.)",
+      "choices": [
+        "QuickSight",
+        "Provisioned IOPS EBS volumes",
+        "EC2 instances",
+        "Redshift"
+      ]
+    },
+    {
+      "id": 15,
+      "multi_choice": false,
+      "question": "Which of the following is reduced as part of AWS total cost of ownership approach?",
+      "choices": [
+        "Developer salaries",
+        "DevOps salaries",
+        "Capital expenditures",
+        "Organizational head count"
+      ]
+    },
+    {
+      "id": 16,
+      "multi_choice": false,
+      "question": "Your online graphics processing application runs short Python applications to perform ETL functions on incoming log files stored in S3. What is the most cost-effective on-demand compute architecture to perform this function?",
+      "choices": [
+        "EC2 spot instances",
+        "EC2 reserved instances",
+        "Lambda",
+        "Elastic Beanstalk"
+      ]
+    },
+    {
+      "id": 17,
+      "multi_choice": false,
+      "question": "Your company needs a storage solution that can support millions of customers accessing billing data. The data should be instantly accessible for users, but individual bills are not accessed that often. What is the most cost-efficient storage for this use case?",
+      "choices": [
+        "Glacier with expedited retrieval",
+        "S3 with Transfer Acceleration",
+        "Standard S3",
+        "S3-IA"
+      ]
+    },
+    {
+      "id": 18,
+      "multi_choice": true,
+      "question": "Which of the following might be an area about which Trusted Advisor makes recommendations? (Choose two.)",
+      "choices": [
+        "Idle load balancers",
+        "Incorrect S3 storage class",
+        "No MFA on root account",
+        "Underuse of DNS records"
+      ]
+    },
+    {
+      "id": 19,
+      "multi_choice": false,
+      "question": "Which of the following is not a valid payment option for reserved instances?",
+      "choices": [
+        "No upfront",
+        "Partial upfront",
+        "Half upfront",
+        "All upfront"
+      ]
+    },
+    {
+      "id": 20,
+      "multi_choice": true,
+      "question": "Which of the following are valid terms for reserved instances? (Choose two.)",
+      "choices": [
+        "Six months",
+        "One Year",
+        "Two Years",
+        "Three Years"
       ]
     }
   ]

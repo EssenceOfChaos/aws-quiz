@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   MONGO_URI: '',
   quizUrl: ' http://localhost:3000/api',
-  endpoint: 'http://localhost:3000'
+  endpoint: 'http://localhost:4200'
 };
 
 /*

@@ -4,7 +4,8 @@ import {
   DESIGN_PERFORMANT_ANSWERS,
   DESIGN_RESILIENT_ANSWERS,
   DESIGN_SECURE_ANSWERS,
-  DESIGN_COST_OPTIMIZED_ANSWERS
+  DESIGN_COST_OPTIMIZED_ANSWERS,
+  PRACTICE_TEST_ANSWERS
 } from './answers';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable, of } from 'rxjs';
@@ -17,11 +18,12 @@ interface Answer {
   id: number;
   choice: [] | string
 }
-interface Question {
+export interface Question {
   id: number;
   multi_choice: boolean;
   question: string;
   choices: string[];
+  response_message?: string;
 }
 
 @Component({
@@ -72,7 +74,7 @@ export class QuizComponent implements OnInit {
 
     this.userName = localStorage.getItem('user') || 'Unregistered'
 
-    // select answers based on the subject
+    // select the appropriate answers based on the subject
     if (this.subject == 'design_resilient') {
       this.answers = DESIGN_RESILIENT_ANSWERS
     } else if (this.subject == 'design_performant') {
@@ -81,6 +83,8 @@ export class QuizComponent implements OnInit {
       this.answers = DESIGN_SECURE_ANSWERS
     } else if (this.subject == 'design_cost_optimized') {
       this.answers = DESIGN_COST_OPTIMIZED_ANSWERS
+    } else if (this.subject == 'practice_test') {
+      this.answers = PRACTICE_TEST_ANSWERS
     }
 
   }

@@ -1,6 +1,6 @@
 <mat-progress-bar color="accent" mode="determinate" value="{{quizProgressBar}}"></mat-progress-bar>
-<!-- TODO: create a pipe to turn subject_name to Subject Name Architectures -->
-<h1 class="page_title">{{subject}}</h1>
+
+<h1 class="page_title">{{subject | subject_name }}</h1>
 <mat-card class="question-card" *ngIf="questions.length">
   <h2>Question # {{ index + 1 }} of {{ questions.length }}</h2>
   <mat-card-subtitle class="right-align">

@@ -8,6 +8,7 @@ import { NgModule } from "@angular/core";
 import { QuizComponent } from "./quiz.component";
 import { QuizRoutingModule } from "./quiz-routing.module";
 import { QuizService } from "./quiz.service";
+import { SubjectNamePipe } from '../../shared/subject_name.pipe';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { QuizService } from "./quiz.service";
     ReactiveFormsModule,
     MaterialModule
   ],
-  declarations: [QuizComponent],
+  declarations: [QuizComponent, SubjectNamePipe],
   providers: [QuizService]
 })
 export class QuizModule {}

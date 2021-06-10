@@ -1,0 +1,227 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "multi_choice": false,
+      "question": "Which of the following elements is not something you'd include in your spot fleet request?",
+      "choices": [
+        "Availability zone",
+        "Target capacity",
+        "Platform (the instance OS)",
+        "AMI"
+      ],
+      "response_message": "The availability zone, target capacity, and AMI are all elements of a complete spot fleet request."
+    },
+    {
+      "id": 2,
+      "multi_choice": false,
+      "question": "Which of the following services can alert you to malware on an EC2 instance?",
+      "choices": [
+        "AWS GuardDuty",
+        "AWS Inspector",
+        "AWS Shield",
+        "AWS Web Application Firewall"
+      ],
+      "response_message": "GuardDuty looks for potentially malicious activity. Inspector looks for vulnerabilities that may result in compromise. Shield and Web Application Firewall protect applications from attack."
+    },
+    {
+      "id": 3,
+      "multi_choice": true,
+      "question": "If you need to allow a user full control over EC2 instance resources, which two of the following must be included in the policy you create?",
+      "choices": [
+        "'Target': 'ec2:*'",
+        "'Action': 'ec2:*'",
+        "'Resource': 'ec2:*'",
+        "'Effect': 'Allow'"
+      ],
+      "response_message": "The correct Resource line would read 'Resource': '*'. There is no 'Target' line in an IAM policy."
+    },
+    {
+      "id": 4,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 5,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 6,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 7,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 8,
+      "multi_choice": false,
+      "question": "What is AWS Trusted Advisor?",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 9,
+      "multi_choice": true,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 10,
+      "multi_choice": true,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 11,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 12,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 13,
+      "multi_choice": true,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 14,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 15,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 16,
+      "multi_choice": true,
+      "question": "",
+      "choices": [
+         "",
+         "",
+         "",
+         ""
+      ]
+    },
+    {
+      "id": 17,
+      "multi_choice": true,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 18,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 19,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 20,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    }
+  ]
+}

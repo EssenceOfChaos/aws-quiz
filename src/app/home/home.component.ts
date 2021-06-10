@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
       value: 'design_cost_optimized',
       viewValue: 'Cost Optimization',
       image: '/assets/images/low-prices.png',
-      enabled: false
+      enabled: true
     },
     {
       value: 'design_secure',

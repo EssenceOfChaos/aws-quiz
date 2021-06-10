@@ -16,6 +16,8 @@ import { NgModule } from '@angular/core';
 import { ProfileComponent } from './profile/profile.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { Stack } from './shared/stack';
+import { QuickTipsDialogComponent } from './quick_tips_dialog/quick_tips_dialog.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { FeedbackComponent } from './feedback/feedback.component';
     HomeComponent,
     LeaderboardComponent,
     SubjectsComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    QuickTipsDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
     HttpClientModule
 
   ],
-  providers: [Title],
+  providers: [Title, Stack],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

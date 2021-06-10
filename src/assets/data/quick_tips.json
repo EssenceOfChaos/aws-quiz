@@ -1,0 +1,141 @@
+[
+  {
+    "id": 1,
+    "text": "The four AWS support plans are basic, developer, business, and enterprise."
+  },
+  {
+    "id": 2,
+    "text": "AWS Trusted Advisor is an online resource that helps you reduce cost as well as increase performance and improve security."
+  },
+  {
+    "id": 3,
+    "text": "Elastic Transcoder allows you to produce media files that are optimized and well suited for various device types."
+  },
+  {
+    "id": 4,
+    "text": "Storage Gateway is a hybrid storage service and allows your on-premises data store to interact with S3."
+  },
+  {
+    "id": 5,
+    "text": "Redshift is AWS’s managed service for OLAP and business intelligence."
+  },
+  {
+    "id": 6,
+    "text": "Glacier is Amazon’s long-term data archival solution."
+  },
+  {
+    "id": 7,
+    "text": "CloudTrail is the AWS service for logging and is particularly helpful for auditing and compliance."
+  },
+  {
+     "id": 8,
+    "text": "CloudWatch provides monitoring of applications and is a low-cost solution for AWS monitoring."
+  },
+  {
+    "id": 9,
+    "text": "IAM is the best option for handling users, groups, and permissions within AWS."
+  },
+  {
+    "id": 10,
+    "text": "Both SWF and SQS deliver a message at least once, but only SWF guarantees that a message will only be delivered a single time."
+  },
+  {
+    "id": 11,
+    "text": "'A' records are used to point a specific domain or subdomain to an IP address."
+  },
+  {
+    "id": 12,
+    "text": "A policy is AWS’s document type for describing a set of permissions."
+  },
+  {
+    "id": 13,
+    "text": "RDS supports a number of database options: MariaDB, Aurora, PostgreSQL, MySQL, Oracle, and SQL Server."
+  },
+  {
+    "id": 14,
+    "text": "The default settings for CloudWatch specify a 5-minute interval at which metrics are collected."
+  },
+  {
+    "id": 15,
+    "text": "Route 53 has a number of valid routing policies: simple, failover, geolocation, geoproximity, latency-based, multivalue answer, and weighted. "
+  },
+  {
+    "id": 16,
+    "text": "All of the S3 storage classes offer 11 9s of durability (99.999999999%)."
+  },
+  {
+    "id": 17,
+    "text": "AWS Fargate is a serverless compute engine for containers that works with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS)."
+  },
+  {
+    "id": 18,
+    "text": "Amazon Lightsail is a virtual private server (VPS) and is the easiest way to get started with AWS for developers and other users who need a solution to build and host their applications in the cloud."
+  },
+  {
+    "id": 19,
+    "text": "Elastic Load Balancing supports three types of load balancers: Classic, Application, and Network."
+  },
+  {
+    "id": 20,
+    "text": "Amazon ElastiCache is a web service that makes it easy to deploy and run Memcached or Redis protocol-compliant server nodes in the cloud."
+  },
+  {
+    "id": 21,
+    "text": "By default, you can create 100 buckets in a single AWS account."
+  },
+  {
+    "id": 22,
+    "text": "EC2 instances as well as ECS containers can both be scaled up and down by Auto Scaling."
+  },
+  {
+    "id": 23,
+    "text": "IAM policy documents are written in JSON."
+  },
+  {
+    "id": 24,
+    "text": "There are four types of policies in IAM: identity-based, resource-based, organization SCPs, and access control lists (ACLs)."
+  },
+  {
+    "id": 25,
+    "text": "CloudFront automatically provides AWS Shield (standard) to protect from DDoS, and it also can integrate with AWS WAF and AWS Shield advanced."
+  },
+   {
+     "id": 26,
+     "text": "AWS accounts allow you five elastic IP addresses per region by default."
+   },
+   {
+     "id": 27,
+     "text": "Amazon RDS backups can be retained for up to 35 days."
+   },
+   {
+     "id": 28,
+     "text": "All metadata for EC2 instances is available at http://169.254.169.254/latest/meta-data."
+   },
+   {
+     "id": 29,
+     "text": "A VPC can only have a single internet gateway."
+   },
+   {
+     "id": 30,
+     "text": "Security groups evaluate all the rules on the group before deciding how to handle traffic."
+   },
+   {
+     "id": 31,
+     "text":"Security groups only provide for 'Allow' rules. All other traffic is automatically denied, so allow rules are the only means of allowing traffic in."
+   },
+   {
+     "id": 32,
+     "text": "Both a NAT instance and a NAT gateway provide for outgoing traffic to route to the Internet from instances within a private subnet."
+   },
+   {
+     "id": 33,
+     "text": " NACLs are stateless — rules must exist for inbound and outbound traffic. Security groups are stateful — anything allowed in is allowed back out automatically."
+   },
+   {
+     "id": 34,
+     "text": "A SWF domain is a collection of related workflows."
+   }
+]
+
+
+
