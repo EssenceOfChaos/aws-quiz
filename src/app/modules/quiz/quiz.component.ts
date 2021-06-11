@@ -64,7 +64,11 @@ export class QuizComponent implements OnInit {
     console.log('ngOnInit Fired from QuizComponent.');
     this.title.setTitle(this.pageTitle);
     this.subject = this.route.snapshot.paramMap.get('subject');
-    console.log(`Beginning quiz on the subject: ${this.subject}`)
+    if (!this.subject) {
+      console.log('No subject passed to Quiz Component')
+    } else {
+      console.log(`Beginning quiz on the subject: ${this.subject}`)
+    }
 
     this.quizService.getQuestions(this.subject).subscribe(res => {
       if (res) {

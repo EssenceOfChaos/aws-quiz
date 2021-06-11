@@ -10,7 +10,8 @@ let quizPath = {
   design_resilient: 'assets/data/design_resilient.json',
   design_performant: 'assets/data/design_performant.json',
   design_secure: 'assets/data/design_secure.json',
-  design_cost_optimized: 'assets/data/design_cost_optimized.json'
+  design_cost_optimized: 'assets/data/design_cost_optimized.json',
+  practice_test: 'assets/data/practice_test.json'
 };
 
 @Injectable({
@@ -23,7 +24,7 @@ export class QuizService {
   endpoint = environment.endpoint;
   constructor(private http: HttpClient) {}
 
-  getQuestions(subject: any): Observable<any> {
+  getQuestions(subject: string = 'design_secure'): Observable<any> {
     if (subject == 'design_resilient') {
       this.quizUrl = quizPath.design_resilient
     } else if(subject == 'design_secure') {
@@ -32,6 +33,8 @@ export class QuizService {
       this.quizUrl = quizPath.design_performant
     } else if (subject == 'design_cost_optimized') {
       this.quizUrl = quizPath.design_cost_optimized
+    } else if (subject == 'practice_test') {
+      this.quizUrl = quizPath.practice_test
     }
 
 

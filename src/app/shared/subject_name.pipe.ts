@@ -6,7 +6,8 @@ export class SubjectNamePipe implements PipeTransform {
   private subject: any;
 
   // Takes a subject name like 'design_secure' and changes it to 'Design Secure Architectures'
-  transform(input: any): string {
+  transform(input: string): string {
+    if (!input) return ''
     let words = input.split('_')
     if (words.length == 2) {
       if (words[0] == 'practice') {

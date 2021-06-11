@@ -7,6 +7,7 @@ import { QuizService } from './quiz.service';
 import { FormBuilder } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MaterialModule } from "src/app/modules/material/material.module";
+import { SubjectNamePipe } from '../../shared/subject_name.pipe';
 
 describe('QuizComponent', () => {
   let service: QuizService;
@@ -19,7 +20,7 @@ describe('QuizComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientModule, RouterTestingModule, MaterialModule],
-      declarations: [ QuizComponent ],
+      declarations: [QuizComponent, SubjectNamePipe],
       providers: [Title, QuizService, FormBuilder]
     })
     .compileComponents();

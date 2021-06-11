@@ -9,6 +9,7 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { QuickTipsDialogComponent } from '../quick_tips_dialog/quick_tips_dialog.component';
 import { QuickTipsService } from '../quick_tips_dialog/quick_tips.service';
 import { TilePosition } from '@angular/material/grid-list/tile-coordinator';
+
 export interface QuickTips {
   id: number;
   text: string;
@@ -61,7 +62,7 @@ export class NavigationComponent {
     this.auth.logout(returnToObject)
   }
 
-  pickRandom(tips: any) {
+  private pickRandom(tips: any) {
     let len = tips.length
     let num = Math.floor(Math.random() * len)
     console.log(tips[num])

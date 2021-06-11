@@ -39,57 +39,62 @@
     {
       "id": 4,
       "multi_choice": false,
-      "question": "",
+      "question": "In a multi-AZ deployment using Oracle, how is data replicated?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
-      ]
+        "Synchronously from the primary instance to a read replica",
+        "Synchronously user a cluster volume",
+        "Asynchronously from the primary to a standby instance",
+        "Synchronously from the primary to a standby instance"
+      ],
+      "response_message": "Multi-AZ deployments using Oracle, PostgreSQL, MariaDB, MySQL, or Microsoft SQL Server replicate data synchronously from the primary to a standby instance. Only a multi-AZ deployment using Aurora uses a cluster volume and replicates data to a specific type of read replica called an Aurora replica."
     },
     {
       "id": 5,
       "multi_choice": false,
-      "question": "",
+      "question": "Which of the following is not a major design consideration for a managed RDS database?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
-      ]
+        "Optimizing indexes",
+        "Optimizing scalability",
+        "Optimizing schemas",
+        "Optimizing views"
+      ],
+      "response_message": "Scalability is managed automatically by RDS. Indexes, schemas, and views should be optimized as much as possible."
     },
     {
       "id": 6,
       "multi_choice": false,
-      "question": "",
+      "question": "Which of the following can be used to audit the changes made to your account and resource configurations?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
-      ]
+        "AWS CloudTrail",
+        "AWS CloudWatch",
+        "AWS CodePipeline",
+        "AWS Config"
+      ],
+      "response_message": "CloudTrail tracks API calls. CloudWatch monitors system performance. CodePipeline is a CI/CD orchestration service."
     },
     {
       "id": 7,
       "multi_choice": false,
+      "question": "You want to use Route 53 to send users to the application load balancer closest to them. Which of the following routing policies lets you do this with the least effort?",
+      "choices": [
+        "Latency-based routing",
+        "Geolocation",
+        "Geoproximity",
+        "Edge routing"
+      ],
+      "response_message": ""
+    },
+    {
+      "id": 8,
+      "multi_choice": false,
       "question": "",
       "choices": [
         "",
         "",
         "",
         ""
-      ]
-    },
-    {
-      "id": 8,
-      "multi_choice": false,
-      "question": "What is AWS Trusted Advisor?",
-      "choices": [
-        "",
-        "",
-        "",
-        ""
-      ]
+      ],
+      "response_message": ""
     },
     {
       "id": 9,
@@ -100,7 +105,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "response_message": ""
     },
     {
       "id": 10,
@@ -111,7 +117,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "response_message": ""
     },
     {
       "id": 11,
@@ -122,7 +129,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "response_message": ""
     },
     {
       "id": 12,
@@ -133,7 +141,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "response_message": ""
     },
     {
       "id": 13,
@@ -144,7 +153,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "response_message": ""
     },
     {
       "id": 14,
@@ -155,7 +165,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "response_message": ""
     },
     {
       "id": 15,
@@ -166,7 +177,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "response_message": ""
     },
     {
       "id": 16,

@@ -13,19 +13,19 @@ export const PRACTICE_TEST_ANSWERS = [
   },
   {
     id: 4,
-    choice: ""
+    choice: "Synchronously from the primary to a standby instance"
   },
   {
     id: 5,
-    choice: ""
+    choice: "Optimizing scalability"
   },
   {
     id: 6,
-    choice: ""
+    choice: "AWS Config"
   },
   {
     id: 7,
-    choice: ""
+    choice: "Geoproximity"
   },
   {
     id: 8,
@@ -37,46 +37,46 @@ export const PRACTICE_TEST_ANSWERS = [
   },
   {
     id: 10,
-    choice: ["Any data on additional volumes attached to the same instance as the encrypted volume", "Data created on an instance that has the encrypted volume attached"]
+    choice: ""
   },
   {
     id: 11,
-    choice: "KMS"
+    choice: ""
   },
   {
     id: 12,
-    choice: "http://169.254.169.254/latest/meta-data/"
+    choice: ""
   },
   {
     id: 13,
-    choice: ["Copy the snapshot to the new region", "Create a new volume from the snapshot in the new region"]
+    choice: ""
   },
   {
     id: 14,
-    choice: "Enable encryption when creating the instance"
+    choice: ""
   },
   {
     id: 15,
-    choice: "A NACL is evaluated first, and then the security group"
+    choice: ""
   },
   {
     id: 16,
-    choice: ["It allows all inbound traffic", "It allows all outbound traffic"]
+    choice: ""
   },
   {
     id: 17,
-    choice: ["It disallows all inbound traffic", "It disallows all outbound traffic"]
+    choice: ""
   },
   {
     id: 18,
-    choice: "From low to high, using the number on the rule"
+    choice: ""
   },
   {
     id: 19,
-    choice: "One or more"
+    choice: ""
   },
   {
     id: 20,
-    choice: "One"
+    choice: ""
   }
 ];
