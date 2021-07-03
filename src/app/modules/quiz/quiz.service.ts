@@ -61,7 +61,7 @@ export class QuizService {
   }
 
  getQuizzes() {
-    return this.http.get(`${this.endpoint}/quizzes`);
+    return this.http.get(`${this.quizEndpoint}/quizzes`);
   }
 
   // generic error handler

@@ -82,103 +82,103 @@
         "Geoproximity",
         "Edge routing"
       ],
-      "response_message": ""
+      "response_message": "Geoproximity routing routes users to the location closest to them. Geolocation routing requires you to create records for specific locations or create a default record. See Chapter 8 for more information."
     },
     {
       "id": 8,
       "multi_choice": false,
-      "question": "",
+      "question": "You need to manually take EBS snapshots of several hundred volumes. Which type of Systems Manager document enables you to do this?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "Command",
+        "Automation",
+        "Policy",
+        "Manual"
       ],
-      "response_message": ""
+      "response_message": "Automation documents let you perform actions against your AWS resources, including taking EBS snapshots. Although called automation documents, you can still manually execute them. A command document performs actions within a Linux or Windows instance. A policy document works only with State Manager and can't take an EBS snapshot. There's no manual document type."
     },
     {
       "id": 9,
       "multi_choice": true,
-      "question": "",
+      "question": "Your security policy requires that you use a KMS key for encrypting S3 objects. It further requires this key be rotated once a year and revoked when misuse is detected. Which key type should you use? (Choose two.)",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "Customer-manageed CMK",
+        "AWS-managed CMK",
+        "S3-managed key",
+        "Customer-provided key"
       ],
-      "response_message": ""
+      "response_message": "You can revoke and rotate both a customer-managed CMK and a customer-provided key at will. You can't revoke or rotate an AWS-managed CMK or an S3-managed key."
     },
     {
       "id": 10,
-      "multi_choice": true,
-      "question": "",
+      "multi_choice": false,
+      "question": "You attempt to connect with Secure Shell (SSH) to an EC2 instance using a public IP address given to you by a colleague. You successfully connect, but it's not the instance you were expecting. Every time you try, you connect to a different instance. What could be the problem?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "You're connecting to the IP address of a network load balancer",
+        "You're connecting to the instance's elastic IP address",
+        "You must use the instance's public domain name",
+        "You're connectingn to the IP address of an application load balancer"
       ],
-      "response_message": ""
+      "response_message": "The fact that you connect to a different instance every time suggests you're connecting to a network load balancer. An application load balancer would not pass SSH traffic through to the instance."
     },
     {
       "id": 11,
       "multi_choice": false,
-      "question": "",
+      "question": "How many database engines can an RDS database instance run?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "Six",
+        "One",
+        "Two",
+        "Four"
       ],
-      "response_message": ""
+      "response_message": "Although there are six database engines to choose from, a single database instance can run only one database engine. If you want to run more than one database engine, you will need a separate database instance for each engine."
     },
     {
       "id": 12,
       "multi_choice": false,
-      "question": "",
+      "question": "If your application is down for 45 minutes a year, what is its approximate availability?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "99%",
+        "99.9%",
+        "99.99%",
+        "99.95%"
       ],
-      "response_message": ""
+      "response_message": "99.99 percent availability corresponds to about 52 minutes of downtime per year. 99 percent, 99.9 percent, and 99.95 percent entail significantly more downtime."
     },
     {
       "id": 13,
       "multi_choice": true,
-      "question": "",
+      "question": "In a relational database, a row may also be called what? (Choose two.)",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "Record",
+        "Attribute",
+        "Tuple",
+        "Table"
       ],
-      "response_message": ""
+      "response_message": "Different relational databases use different terminology. A row, record, and tuple all describe an ordered set of columns. An attribute is another term for column. A table contains rows and columns."
     },
     {
       "id": 14,
-      "multi_choice": false,
-      "question": "",
+      "multi_choice": true,
+      "question": "You've configured CloudTrail to log all management events in all regions. Which of the following API events will CloudTrail log? (Choose two.)",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "Logging into the AWS Console",
+        "Creating an S3 bucket from the web console",
+        "Uploading an object to an S3 bucket",
+        "Creating a subnet using the AWS CLI"
       ],
-      "response_message": ""
+      "response_message": "Creating a bucket and subnet are API actions, regardless of whether they're performed from the web console or AWS CLI. Uploading an object to an S3 bucket is a data event, not a management event. Logging into the AWS console is a non-API management event."
     },
     {
       "id": 15,
       "multi_choice": false,
-      "question": "",
+      "question": "Which element has no effect in an identity-based policy?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "Operation",
+        "Principle",
+        "Effect",
+        "Condition"
       ],
-      "response_message": ""
+      "response_message": "The principal element is not used in an identity-based policy. Operation, effect, and condition all have effects in an identity-based policy."
     },
     {
       "id": 16,
@@ -189,7 +189,8 @@
          "",
          "",
          ""
-      ]
+      ],
+      "response_message": ""
     },
     {
       "id": 17,
@@ -200,7 +201,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "response_message": ""
     },
     {
       "id": 18,
@@ -211,7 +213,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "response_message": ""
     },
     {
       "id": 19,
@@ -222,7 +225,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "response_message": ""
     },
     {
       "id": 20,
@@ -233,7 +237,128 @@
         "",
         "",
         ""
-      ]
+      ],
+      "response_message": ""
+    },
+    {
+      "id": 21,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "response_message": ""
+    },
+    {
+      "id": 22,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "response_message": ""
+    },
+    {
+      "id": 23,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "response_message": ""
+    },
+    {
+      "id": 24,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "response_message": ""
+    },
+    {
+      "id": 25,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "response_message": ""
+    },
+    {
+      "id": 26,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "response_message": ""
+    },
+    {
+      "id": 27,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "response_message": ""
+    },
+    {
+      "id": 28,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "response_message": ""
+    },
+    {
+      "id": 29,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "response_message": ""
+    },
+    {
+      "id": 30,
+      "multi_choice": false,
+      "question": "",
+      "choices": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "response_message": ""
     }
   ]
 }

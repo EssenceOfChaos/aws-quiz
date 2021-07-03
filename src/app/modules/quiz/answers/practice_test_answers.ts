@@ -29,35 +29,35 @@ export const PRACTICE_TEST_ANSWERS = [
   },
   {
     id: 8,
-    choice: ""
+    choice: "Automation"
   },
   {
     id: 9,
-    choice: ""
+    choice: ["Customer-manageed CMK", "Customer-provided key"]
   },
   {
     id: 10,
-    choice: ""
+    choice: "You're connecting to the IP address of a network load balancer"
   },
   {
     id: 11,
-    choice: ""
+    choice: "One"
   },
   {
     id: 12,
-    choice: ""
+    choice: "99.99%"
   },
   {
     id: 13,
-    choice: ""
+    choice: ["Record", "Tuple"]
   },
   {
     id: 14,
-    choice: ""
+    choice: ["Creating an S3 bucket from the web console", "Creating a subnet using the AWS CLI"]
   },
   {
     id: 15,
-    choice: ""
+    choice: "Principle"
   },
   {
     id: 16,

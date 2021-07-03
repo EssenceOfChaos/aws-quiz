@@ -6,8 +6,10 @@
     {{ data.text }}
   </p>
 </div>
-  <div mat-dialog-actions>
+  <div mat-dialog-actions align="end">
     <!-- TODO: Implement Next button to view next tip-->
-    <button mat-raised-button color="primary" disabled>Next</button>
+    <button mat-button mat-dialog-close>Thanks!</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true">Next Tip</button>
   </div>
+
 

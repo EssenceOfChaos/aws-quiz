@@ -16,9 +16,9 @@ export class QuickTipsService {
   constructor(private http: HttpClient) {}
 
   getQuickTips(): Observable<QuickTips[]> {
-    console.log( `Fetching QuickTips`);
+    console.log( `Fetching QuickTips...`);
     return this.http.get<QuickTips[]>(`${this.endpoint}/${this.tips_url}`).pipe(
-      tap(data => console.log('QuickTips: ' + JSON.stringify(data))),
+      tap(data => console.log(`Fetched: ${data.length} QuickTips`)),
       retry(3),
       catchError(this.handleError)
     );

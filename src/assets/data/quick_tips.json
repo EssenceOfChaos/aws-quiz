@@ -69,7 +69,7 @@
   },
   {
     "id": 18,
-    "text": "Amazon Lightsail is a virtual private server (VPS) and is the easiest way to get started with AWS for developers and other users who need a solution to build and host their applications in the cloud."
+    "text": "Amazon Lightsail is a virtual private server (VPS) and is the easiest way to get started with AWS to build and host their applications in the cloud."
   },
   {
     "id": 19,
@@ -134,6 +134,22 @@
    {
      "id": 34,
      "text": "A SWF domain is a collection of related workflows."
+   },
+   {
+     "id": 35,
+     "text": "Weighted policies route among multiple resources by percentage. Failover incorporates backup resources for higher availability. Latency selects the available resource with the lowest latency. Geolocation tailors request responses to the end user's location."
+   },
+   {
+     "id": 36,
+     "text": "Identity pools provide temporary access to defined AWS services to your application users. Sign-up and sign-in is managed through Cognito user pools."
+   },
+   {
+     "id": 37,
+     "text": "An Internet gateway performs NAT for instances that have a public IP address."
+   },
+   {
+     "id": 38,
+     "text": "Credential delivery to databases or third-party applications is provided by AWS Secrets Manager."
    }
 ]
 

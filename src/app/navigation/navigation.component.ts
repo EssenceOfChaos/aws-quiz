@@ -5,10 +5,10 @@ import { map, shareReplay } from 'rxjs/operators';
 
 import { AuthService } from '@auth0/auth0-angular';
 import { DOCUMENT } from '@angular/common';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { QuickTipsDialogComponent } from '../quick_tips_dialog/quick_tips_dialog.component';
 import { QuickTipsService } from '../quick_tips_dialog/quick_tips.service';
-import { TilePosition } from '@angular/material/grid-list/tile-coordinator';
+// import { TilePosition } from '@angular/material/grid-list/tile-coordinator';
 
 export interface QuickTips {
   id: number;
@@ -46,16 +46,22 @@ export class NavigationComponent {
   openDialog() {
     let tip = this.pickRandom(this.quick_tips)
     console.log(tip);
-    this.dialog.open(QuickTipsDialogComponent, {
+    let dialogRef = this.dialog.open(QuickTipsDialogComponent, {
       data: {
         id: tip.id,
         text: tip.text
       },
-      height: '300px',
-      width: '400px',
+      minHeight: '200px',
+      minWidth: '300px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log(`Dialog result: ${result}`);
+        this.openDialog();
+      }
     });
   }
-
 
   logout(returnToObject: any) {
     localStorage.clear();
@@ -65,7 +71,6 @@ export class NavigationComponent {
   private pickRandom(tips: any) {
     let len = tips.length
     let num = Math.floor(Math.random() * len)
-    console.log(tips[num])
     return tips[num]
   }
 

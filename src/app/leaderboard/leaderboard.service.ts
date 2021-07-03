@@ -3,30 +3,23 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 import { Injectable } from '@angular/core';
-import {UserInfo} from './leaderboard.component';
+import { UserInfo } from './leaderboard.component';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LeaderboardService {
-  private url = environment.endpoint;
+  private url = environment.quizUrl;
   constructor(private http: HttpClient) {}
 
   getScores(): Observable<UserInfo[]> {
-    // console.log('LeaderboardService.getScores() - getting the users and their scores')
-    return this.http.get<UserInfo[]> (`${this.url}/api/quizzes`).pipe(
+    console.log('LeaderboardService.getScores() - getting the users and their scores')
+    return this.http.get<UserInfo[]>(`${this.url}/quizzes`).pipe(
       retry(2),
       catchError(this.handleError)
     );
   }
-
-  // getScores(): Observable<UserInfo[]> {
-  //   return this.http.get<UserInfo[]> (`${this.url}/api/quizzes`).pipe(
-  //     retry(2),
-  //     catchError(this.handleError)
-  //   );
-  // }
 
   // General Error Handling Function
   private handleError(error: HttpErrorResponse) {

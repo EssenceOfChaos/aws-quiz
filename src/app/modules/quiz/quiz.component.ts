@@ -37,7 +37,7 @@ export class QuizComponent implements OnInit {
   questions: Array<Question> = [];
   question!: Observable<Question>;
   answers: any;
-  // responseSelected = false;
+  responseSelected = false;
   index = 0;
   isAnswered = false;
   quizFinished = false;
@@ -115,6 +115,7 @@ export class QuizComponent implements OnInit {
     }
 
     this.isAnswered = true;
+    this.responseSelected = false
 
     // is it the end of the quiz?
     if (this.index === this.questions.length - 1) {
@@ -168,26 +169,45 @@ export class QuizComponent implements OnInit {
 
   onCheckboxChange(e: any) {
     const multiChoiceResponse: FormArray = this.form.get('multiChoiceResponse') as FormArray;
-    // console.log(multiChoiceResponse);
-    // if (multiChoiceResponse.value.length == 2) {
-    //   this.responseSelected = true;
-    // }
+    this.removeNullValues(multiChoiceResponse)
+    // select checkbox
     if (e.checked) {
       // console.log(`${e.source.name}`)
       multiChoiceResponse.push(new FormControl(e.source.name));
+      this.removeNullValues(multiChoiceResponse)
+      if (multiChoiceResponse.value.length == 2) {
+        this.responseSelected = true;
+      } else if (multiChoiceResponse.value.length > 2) {
+        this.responseSelected = false;
+      }
+      // unselect checkbox
     } else {
       let i: number = 0;
       multiChoiceResponse.controls.forEach((item: any) => {
-        // console.log(Object.keys(item))
-        // console.log(item.value)
         if (item.value == e.source.name) {
-          // console.log(`${e.source.name}`)
           multiChoiceResponse.removeAt(i);
+          if (multiChoiceResponse.value.length < 2) {
+            this.responseSelected = false;
+          } else if ( multiChoiceResponse.value.length == 2) {
+            this.responseSelected = true;
+          }
           return;
         }
         i++;
       });
     }
+  }
+
+  removeNullValues(formArray: FormArray) {
+    let index = 0;
+    formArray.controls.forEach((item: any) => {
+      console.log(`running loop on index ${index}`)
+      if (!item.value) {
+        formArray.removeAt(index);
+      }
+      index ++;
+    });
+    return formArray
   }
 
   shuffleQuestions(arrayOfQuestions: Question[]) {
@@ -207,12 +227,8 @@ export class QuizComponent implements OnInit {
   }
 
   logToConsole(event: MatRadioChange) {
-    // console.log(event);
-    // if (this.responseSelected) {
-    //   this.responseSelected = false;
-    // } else {
-    //   this.responseSelected = true;
-    // }
+    console.log(event);
+    this.responseSelected = true;
 
   }
 

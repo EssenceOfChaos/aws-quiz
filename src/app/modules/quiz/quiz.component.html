@@ -35,10 +35,10 @@
   <mat-card-actions class="submit-button">
     <button
       mat-raised-button
-
       color="primary"
       (click)="submitChoice(form.value, true, questions[index].id)"
       [style.visibility]="isAnswered === true ? 'hidden' : 'visible'"
+      [disabled]="!responseSelected"
     >
       Submit
     </button>
@@ -66,6 +66,7 @@
         color="primary"
         (click)="submitChoice(response, false, questions[index].id)"
         [style.visibility]="isAnswered === true ? 'hidden' : 'visible'"
+        [disabled]="!responseSelected"
       >
         Submit
       </button>
