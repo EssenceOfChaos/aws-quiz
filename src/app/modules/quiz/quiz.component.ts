@@ -201,7 +201,6 @@ export class QuizComponent implements OnInit {
   removeNullValues(formArray: FormArray) {
     let index = 0;
     formArray.controls.forEach((item: any) => {
-      console.log(`running loop on index ${index}`)
       if (!item.value) {
         formArray.removeAt(index);
       }
@@ -222,7 +221,7 @@ export class QuizComponent implements OnInit {
   /** TODO:increment progress by this.questions.length / 100 */
   incrementProgressBar() {
     // 20 questions means increment 5 per question
-    this.questions.length
+    // this.questions.length
     this.quizProgressBar += 5
   }
 
