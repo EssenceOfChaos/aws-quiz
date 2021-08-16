@@ -107,8 +107,8 @@
 
   <!-- <br /> -->
 
-  <mat-card-footer class="card-footer response_message" *ngIf="subject == 'practice_test' && isAnswered">
-    <p style="text-align:center;">
+  <mat-card-footer class="card-footer" *ngIf="subject == 'practice_test' && isAnswered">
+    <p class="response_message" style="text-align:center;">
       {{questions[index].response_message}}
     </p>
   </mat-card-footer>
