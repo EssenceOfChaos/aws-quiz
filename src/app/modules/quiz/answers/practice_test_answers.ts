@@ -61,22 +61,62 @@ export const PRACTICE_TEST_ANSWERS = [
   },
   {
     id: 16,
-    choice: ""
+    choice: "EFA"
   },
   {
     id: 17,
-    choice: ""
+    choice: "Spot"
   },
   {
     id: 18,
-    choice: ""
+    choice: "It can communicate with other subnets across availability zones"
   },
   {
     id: 19,
-    choice: ""
+    choice: "A routing table"
   },
   {
     id: 20,
-    choice: ""
+    choice: "/16"
+  },
+  {
+    id: 21,
+    choice: "None of the above"
+  },
+  {
+    id: 22,
+    choice: "Elastic Beanstalk"
+  },
+  {
+    id: 23,
+    choice: "Storage gateway - stored volume"
+  },
+  {
+    id: 24,
+    choice: ["Minimum length", "Complexity"]
+  },
+  {
+    id: 25,
+    choice: "A VPC can peer with no more than two other VPCs"
+  },
+  {
+    id: 26,
+    choice: "None of the above"
+  },
+  {
+    id: 27,
+    choice: "All of the above"
+  },
+  {
+    id: 28,
+    choice: "Security Group"
+  },
+  {
+    id: 29,
+    choice: "Resources"
+  },
+  {
+    id: 30,
+    choice: "S3"
   }
 ];

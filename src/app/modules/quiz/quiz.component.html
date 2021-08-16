@@ -76,7 +76,9 @@
 
     <!-- After Submit Button -->
     <mat-divider *ngIf="isAnswered"></mat-divider>
+
     <br />
+
   <button
     mat-raised-button
     color="accent"
@@ -86,16 +88,28 @@
   >
     Next Question
   </button>
+
   <mat-card-footer class="card-footer" *ngIf="correctAnswer == 'no'">
     <h2 style="text-align:center;">
       Sorry, that is incorrect
       <img class="footer-image" src="assets/images/badge-x.svg" height="30" width="30" />
     </h2>
   </mat-card-footer>
+
   <mat-card-footer class="card-footer" *ngIf="correctAnswer == 'yes'">
     <h2 style="text-align:center;">
       Great Job!
       <img class="footer-image" src="assets/images/green-checkmark.png" height="30" width="30" />
     </h2>
+  </mat-card-footer>
+
+  <!-- <mat-divider *ngIf="isAnswered"></mat-divider> -->
+
+  <!-- <br /> -->
+
+  <mat-card-footer class="card-footer response_message" *ngIf="subject == 'practice_test' && isAnswered">
+    <p style="text-align:center;">
+      {{questions[index].response_message}}
+    </p>
   </mat-card-footer>
 </mat-card>

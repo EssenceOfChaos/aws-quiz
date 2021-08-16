@@ -1,4 +1,5 @@
 <mat-card class="home-card">
+
   <mat-card-header>
     <div mat-card-avatar>
       <!-- <img src="/assets/images/aws_logo.png" class="aws-avatar"/> -->
@@ -8,14 +9,24 @@
     </mat-card-title>
     <mat-card-subtitle>
       <h3>
-        To get started, select a subject to test on...
+        There are 4 quizzes with 20 questions each.
       </h3>
     </mat-card-subtitle>
   </mat-card-header>
+
   <mat-card-content>
-
-
+   <p>
+    Try one of the 4 quizzes, based on the Well-Architected Framework. Or, if you feel you are well prepared, click "Start Practice Test".
+   </p>
+    <button
+      (click)="startQuiz('practice_test')"
+      mat-raised-button
+      color="primary"
+    >
+      Start Practice Test
+    </button>
   </mat-card-content>
+
 </mat-card>
 
 
@@ -35,6 +46,7 @@
       </mat-card-content>
       <mat-card-actions>
         <button
+        class="subject_button"
         (click)="startQuiz(subject.value)"
         mat-raised-button
         color="accent"

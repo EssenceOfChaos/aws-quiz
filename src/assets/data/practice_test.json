@@ -182,183 +182,183 @@
     },
     {
       "id": 16,
-      "multi_choice": true,
-      "question": "",
+      "multi_choice": false,
+      "question": "What solution allows you to deploy HPC applications that require massive inter-instance communications at scale that used the Scalable Reliable Datagram (SRD) protocol to improve the speed and latency of inter-instance communications?",
       "choices": [
-         "",
-         "",
-         "",
-         ""
+         "EFA",
+         "FSx",
+         "Lustre",
+         "EC2 Placement Groups"
       ],
-      "response_message": ""
+      "response_message": "The Elastic Fabric Adapter (EFA) is an EC2 network device that improves throughput and scalability of HPC. FsX is a Windows file storage offering, Luster is also an HPC solution but does not use the SRD protocol, and EC2 placement groups would help with HPC but do not specifically use elastic fabric adapters."
     },
     {
       "id": 17,
-      "multi_choice": true,
-      "question": "",
+      "multi_choice": false,
+      "question": "You plan on a long-running EMR cluster for your company’s big data Hadoop application. In order to cost-optimize the task nodes, what instance options would best fit your needs?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "On Demand",
+        "Reserved",
+        "Spot",
+        "Lambda"
       ],
-      "response_message": ""
+      "response_message": "For long running instances, the most cost-effective offering from AWS is a reserved instance type. On demand is the most expensive, and spot is the cheapest but can be terminated. Lambda is serverless and not applicable to long-running clusters such as EMR. A task node can tolerate spot instances terminating as they do not store data locally."
     },
     {
       "id": 18,
       "multi_choice": false,
-      "question": "",
+      "question": "Which of the following is true about a new subnet created in a custom VPC that was set up with the default configuration?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "It will require a new route table to be created",
+        "It can communicate with other subnets across availability zones",
+        "It will not have a NACL associated with it",
+        "It will have an Internet Gateway attached automatically"
       ],
-      "response_message": ""
+      "response_message": "All custom VPCs will have a route table and NACL upon creation but not an Internet Gateway."
     },
     {
       "id": 19,
       "multi_choice": false,
-      "question": "",
+      "question": "Which of the following is not a valid attribute for an elastic network interface?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "An IPv6 address",
+        "An IPv4 address",
+        "A source/destination check flag",
+        "A routing table"
       ],
-      "response_message": ""
+      "response_message": "Elastic network interfaces do not have routing tables, but they can have IPv4 and IPv6 addresses and a source/destination check flag."
     },
     {
       "id": 20,
       "multi_choice": false,
-      "question": "",
+      "question": "Which of the following offers the largest range of IP addresses?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "/16",
+        "/20",
+        "/24",
+        "/28"
       ],
-      "response_message": ""
+      "response_message": "A /16 offers 65,536 IP addresses. The lower the number, the larger the pool of IP addresses when using CIDR notation."
     },
     {
       "id": 21,
       "multi_choice": false,
-      "question": "",
+      "question": "For which of the following storage classes do you need to specify an availability zone?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "S3",
+        "S3-IA",
+        "S3 One Zone-IA",
+        "None of the above"
       ],
-      "response_message": ""
+      "response_message": "While S3 does use availability zones to store objects in buckets, you do not choose the availability zone yourself. Even S3 One Zone-IA does not allow you to specify the AZ for use."
     },
     {
       "id": 22,
       "multi_choice": false,
-      "question": "",
+      "question": "What service allows you to deploy your code with minimal oversight?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "Elastic Beanstalk",
+        "CloudFormation",
+        "Elastic Transcoder",
+        "AWS AutoDeploy"
       ],
-      "response_message": ""
+      "response_message": "Elastic Beanstalk can deploy your code and handle capacity provisioning, load balancing, and setting up auto-scaling and health checks, all with very little oversight."
     },
     {
       "id": 23,
       "multi_choice": false,
-      "question": "",
+      "question": "Which of the following provides low latency access to all data while still storing the dataset in the cloud?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "Storage gateway - snapshot",
+        "Storage gateway - virtual tape library",
+        "Storage gateway - stored volume",
+        "Storage gateway -cached volume"
       ],
-      "response_message": ""
+      "response_message": "A storage gateway using stored volumes will store all data locally while backing up the data to S3 in AWS as well."
     },
     {
       "id": 24,
-      "multi_choice": false,
-      "question": "",
+      "multi_choice": true,
+      "question": "Which of the following are appropriate password policy requirements? (Choose two.)",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "Maximum length",
+        "Recovery",
+        "Minimum length",
+        "Complexity"
       ],
-      "response_message": ""
+      "response_message": "A good password policy has minimum length and complexity requirements."
     },
     {
       "id": 25,
       "multi_choice": false,
-      "question": "",
+      "question": "Which of the following statements is false?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "A subnet cannot span multiple availability zones",
+        "A VPC can peer with no more than two other VPCs",
+        "A VPC peering connection does not support transitive routing",
+        "A VPC can peer with VPCs in other AWS accounts"
       ],
-      "response_message": ""
+      "response_message": "A VPC can peer with unlimited other VPCs. A subnet cannot span AZs, a VPC can peer with VPCs in other accounts"
     },
     {
       "id": 26,
       "multi_choice": false,
-      "question": "",
+      "question": "Which of the following does a VPC endpoint require?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "Internet Gateway",
+        "NAT Gateway",
+        "VPN connection",
+        "None of the above"
       ],
-      "response_message": ""
+      "response_message": "A VPC endpoint does not require any of these to connect"
     },
     {
       "id": 27,
       "multi_choice": false,
-      "question": "",
+      "question": "What languages can you use with SWF?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "Java, Node, Ruby, Python, Golang",
+        "Java, Node, Elixir, Rust, Python, Golang",
+        "Swift, Objective-C",
+        "All of the above"
       ],
-      "response_message": ""
+      "response_message": "SWF places no language restraints on your workflow, as long as interactions can be managed via HTTP requests and responses."
     },
     {
       "id": 28,
       "multi_choice": false,
-      "question": "",
+      "question": "Which of the following can flow logs NOT be created for?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "VPC",
+        "Subnet",
+        "Security Group",
+        "Network Interface"
       ],
-      "response_message": ""
+      "response_message": "Flow Logs allow you to capture IP traffic information and can be created at the VPC, subnet, or network interface level."
     },
     {
       "id": 29,
       "multi_choice": false,
-      "question": "",
+      "question": "Which of the following sections of a CloudFormation template is required?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "Resources",
+        "Outputs",
+        "Parameters",
+        "Mappings"
       ],
-      "response_message": ""
+      "response_message": "Templates include several major sections. The Resources section is the only required section."
     },
     {
       "id": 30,
       "multi_choice": false,
-      "question": "",
+      "question": "Which of the following can asynchronously trigger a Lambda function?",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "API Gateway",
+        "Cognito",
+        "Alexa",
+        "S3"
       ],
-      "response_message": ""
+      "response_message": "ALB, Cognito, Lex, Alexa, API Gateway, CloudFront, and Kinesis Data Firehose are all valid direct (synchronous) triggers for Lambda functions. S3 is one of the valid asynchronous triggers."
     }
   ]
 }
