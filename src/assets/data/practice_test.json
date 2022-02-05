@@ -82,7 +82,7 @@
         "Geoproximity",
         "Edge routing"
       ],
-      "response_message": "Geoproximity routing routes users to the location closest to them. Geolocation routing requires you to create records for specific locations or create a default record. See Chapter 8 for more information."
+      "response_message": "Geoproximity routing routes users to the location closest to them. Geolocation routing requires you to create records for specific locations or create a default record."
     },
     {
       "id": 8,

@@ -48,6 +48,7 @@ export class QuizComponent implements OnInit {
   // state of user's choice ('unanswered', 'no', 'yes')
   correctAnswer = 'unanswered';
   form: FormGroup;
+  progressionRate = 0;
 
   constructor(
     private title: Title,
@@ -64,6 +65,7 @@ export class QuizComponent implements OnInit {
     console.log('ngOnInit Fired from QuizComponent.');
     this.title.setTitle(this.pageTitle);
     this.subject = this.route.snapshot.paramMap.get('subject');
+
     if (!this.subject) {
       console.log('No subject passed to Quiz Component')
     } else {
@@ -91,6 +93,8 @@ export class QuizComponent implements OnInit {
       this.answers = PRACTICE_TEST_ANSWERS
     }
 
+    this.progressionRate = this.questions.length / 100
+
   }
 
   nextQuestion(i: number) {
@@ -102,7 +106,7 @@ export class QuizComponent implements OnInit {
     this.isAnswered = false;
     this.correctAnswer = 'unanswered';
     this.form.reset({});
-    this.incrementProgressBar();
+    this.incrementProgressBar(this.progressionRate);
   }
 
   submitChoice(response: any, multiResponse=false, questionId: number) {
@@ -218,11 +222,9 @@ export class QuizComponent implements OnInit {
     }
     this.questions = arrayOfQuestions
   }
-  /** TODO:increment progress by this.questions.length / 100 */
-  incrementProgressBar() {
-    // 20 questions means increment 5 per question
-    // this.questions.length
-    this.quizProgressBar += 5
+
+  incrementProgressBar(progressionRate: number) {
+    this.quizProgressBar += progressionRate
   }
 
   logToConsole(event: MatRadioChange) {

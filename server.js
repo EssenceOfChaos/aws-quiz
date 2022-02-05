@@ -70,16 +70,20 @@ const server = app.listen(port, () => {
 })
 
 // Find 404 and hand over to error handler
-app.use((req, res, next) => {
-  var err = new Error('Not Found');
-  logger.error(`${req.url} not available!`)
-  err.status = 404;
+app.use((err, req, res, next) => {
+  if (err.statusCode === 404) {
+    var err = new Error('Not Found');
+    logger.error(`${req.url} not available!`)
+    err.status = 404;
+  }
+
   next(err);
 });
 
 // error handler
 app.use(function (err, req, res, next) {
   console.error(err.message);
+  logger.error(err.message)
   if (!err.statusCode) err.statusCode = 500;
   res.status(err.statusCode).send(err.message);
 });
